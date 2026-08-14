@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Amplify HQ mark">
+  <!--
+    Placeholder mark derived from the Amplify HQ logo brief:
+    head-in-profile + brain contour + two ascending signal arcs.
+    Uses currentColor for head+arcs (inherits text color from parent),
+    and CSS var --mark-brain for the interior brain lines
+    (so it can match the surface color on dark or light backgrounds).
+    Swap this file with the traced/exported original at any time —
+    all components pick it up automatically.
+  -->
+  <g fill="currentColor">
+    <path d="M74 190
+             L74 176
+             L58 176
+             L58 118
+             C58 74 82 46 118 42
+             C158 38 178 66 180 96
+             L184 116
+             L192 118
+             L192 132
+             L182 140
+             L186 158
+             L176 170
+             L162 170
+             L150 178
+             L96 178
+             L96 190
+             Z" />
+  </g>
+  <g fill="none" stroke="var(--mark-brain, #f7f8fa)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- brain gyri suggestion -->
+    <path d="M78 96 Q92 82 108 96 Q120 108 132 96 Q146 82 160 96" />
+    <path d="M78 116 Q94 104 110 116 Q124 128 138 116 Q150 106 162 118" />
+    <path d="M84 136 Q100 126 114 136 Q128 146 142 136" />
+    <path d="M92 154 Q106 146 120 154 Q132 162 144 156" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round">
+    <!-- signal arcs (amplify) -->
+    <path d="M148 30 Q188 30 202 66" />
+    <path d="M126 12 Q198 12 214 76" />
+  </g>
+</svg>
