@@ -1,49 +1,77 @@
 @import "tailwindcss";
 
 /*
- * Amplify HQ design system v3
- * Clinical neuroscience + business psychology aesthetic
- * Foundation: Deep Charcoal + Bright Teal + White
- * No decorative flourishes. High contrast. Scientific.
+ * Amplify HQ — editorial design system
+ *
+ * The visual language is built from a serif/sans pairing that mirrors
+ * the concept of the organization itself: business × psychology, systems
+ * × people. Warm bone paper, ink text, vermilion accent, moss for depth.
+ *
+ * No pill buttons, no card grids, no gradients. Type does the work.
  */
 
 @theme {
-  /* Core palette */
-  --color-charcoal: #1a1f36;
-  --color-charcoal-2: #252d47;
-  --color-charcoal-3: #3a4558;
-  --color-teal: #00d9ff;
-  --color-teal-dark: #00a8cc;
-  --color-teal-light: #33e5ff;
+  /* ---- Editorial palette ------------------------------------------- */
+  --color-ink: #191713;
+  --color-ink-2: #4a453d;
+  --color-ink-3: #6f6759;
+
+  --color-bone: #f4efe3;
+  --color-bone-2: #ede6d3;
+  --color-cream: #e7dfc8;
+  --color-paper: #ffffff;
+
+  --color-signal: #c8391f;
+  --color-signal-2: #a12c15;
+  --color-signal-tint: #f1d9d1;
+
+  --color-moss: #2a382a;
+  --color-moss-2: #3f5040;
+
+  --color-stone: #86796a;
+  --color-stone-2: #b7ac9a;
+  --color-line: #d9d1bd;
+  --color-line-2: #c4b99f;
+
+  /* ---- Back-compat aliases (so old references keep working) -------- */
+  --color-charcoal: var(--color-ink);
+  --color-charcoal-2: var(--color-moss);
+  --color-charcoal-3: var(--color-stone);
+  --color-teal: var(--color-signal);
+  --color-teal-dark: var(--color-signal-2);
+  --color-teal-light: var(--color-signal);
   --color-white: #ffffff;
-  --color-gray-light: #f5f7fa;
-  --color-gray-2: #e8ecf1;
-  --color-gray-muted: #8896a8;
-  --color-accent-warm: #dc2626;
+  --color-gray-light: var(--color-bone-2);
+  --color-gray-2: var(--color-line);
+  --color-gray-muted: var(--color-stone);
+  --color-accent-warm: var(--color-signal);
+  --color-accent: var(--color-signal);
+  --color-rule-strong: var(--color-ink);
 
-  /* Fonts */
-  --font-display: var(--font-space-grotesk);
+  /* ---- Fonts ------------------------------------------------------- */
+  --font-serif: var(--font-instrument-serif);
+  --font-display: var(--font-instrument-serif);
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-jetbrains-mono);
 
-  /* Type scale */
-  --text-hero: clamp(2.75rem, 6.5vw, 5.75rem);
-  --text-hero--line-height: 0.95;
-  --text-hero--letter-spacing: -0.035em;
+  /* ---- Type scale — editorial ------------------------------------- */
+  --text-hero: clamp(3rem, 8vw, 7.5rem);
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: -0.015em;
 
-  --text-display: clamp(2.25rem, 4.6vw, 4.25rem);
-  --text-display--line-height: 0.98;
-  --text-display--letter-spacing: -0.025em;
+  --text-display: clamp(2.5rem, 5.5vw, 5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.01em;
 
-  --text-section: clamp(1.75rem, 2.8vw, 2.75rem);
-  --text-section--line-height: 1.05;
-  --text-section--letter-spacing: -0.02em;
+  --text-section: clamp(1.875rem, 3.2vw, 3rem);
+  --text-section--line-height: 1.08;
+  --text-section--letter-spacing: -0.01em;
 
-  /* Layout */
+  /* ---- Layout ------------------------------------------------------ */
   --container-narrow: 56rem;
-  --container-page: 80rem;
+  --container-page: 82rem;
 
-  /* Motion */
+  /* ---- Motion ------------------------------------------------------ */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -60,8 +88,8 @@
   }
 
   body {
-    background: var(--color-white);
-    color: var(--color-charcoal);
+    background: var(--color-bone);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01", "ss03";
     -webkit-font-smoothing: antialiased;
@@ -69,66 +97,91 @@
   }
 
   ::selection {
-    background: var(--color-charcoal);
-    color: var(--color-teal);
+    background: var(--color-signal);
+    color: var(--color-bone);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal);
+    outline: 2px solid var(--color-signal);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
-  a {
-    color: inherit;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-  }
+  a { color: inherit; }
 }
 
-/* Utilities */
+/* ---- Utilities ---------------------------------------------------- */
 
 @utility eyebrow {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-gray-muted);
+  color: var(--color-stone);
 }
 
 @utility eyebrow-on-dark {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-teal);
+  color: var(--color-signal-tint);
 }
 
 @utility hairline {
   height: 1px;
   width: 100%;
-  background: var(--color-gray-2);
+  background: var(--color-line);
 }
 
 @utility hairline-strong {
   height: 1px;
   width: 100%;
-  background: var(--color-gray-muted);
+  background: var(--color-ink);
 }
 
+@utility serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility drop-cap {
+  &::first-letter {
+    font-family: var(--font-serif);
+    font-size: 4.5em;
+    line-height: 0.85;
+    float: left;
+    padding: 0.05em 0.12em 0 0;
+    color: var(--color-signal);
+  }
+}
+
+/* ---- Motion ------------------------------------------------------- */
+
 @keyframes ampFadeUp {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes ampRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ampDraw {
+  from { stroke-dashoffset: 100%; }
+  to   { stroke-dashoffset: 0; }
+}
+
 @utility fade-up {
-  animation: ampFadeUp 700ms var(--ease-out-soft) both;
+  animation: ampFadeUp 800ms var(--ease-out-soft) both;
+}
+
+@utility rise {
+  animation: ampRise 900ms var(--ease-out-soft) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

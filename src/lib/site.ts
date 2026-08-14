@@ -2,10 +2,10 @@ export const site = {
   name: "Amplify HQ",
   legalName: "Amplify HQ",
   taxStatus: "A 501(c)(3) nonprofit",
-  tagline: "Business × Psychology for the next generation.",
+  tagline: "Where students learn how people — and businesses — really work.",
   description:
-    "Amplify HQ connects high school students with businesses, professionals, and real-world opportunities at the intersection of business and human behavior.",
-  concept: "Think · Connect · Amplify",
+    "Amplify HQ is a student-led nonprofit exploring the human side of business. We give high school students a place to ask real questions about why people choose, buy, lead, and build — with professionals, businesses, and each other.",
+  concept: "Ask · Learn · Build",
   launchTerm: "Fall 2026",
   url: "https://amplifyhq.org",
   contactEmail: "hello@amplifyhq.org",
@@ -16,7 +16,6 @@ export type NavItem = {
   href: string;
 };
 
-/** Flat, no dropdowns. Recruitment roles get top-level placement. */
 export const primaryNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
@@ -122,8 +121,6 @@ export const chapters: Chapter[] = [
 
 /* ---------------------------------------------------------------- *
  * Program calendar — the actual chapter year.
- * Chapters meet once per month; each chapter adapts the focus to
- * the resources available in its own community.
  * ---------------------------------------------------------------- */
 
 export type CalendarEntry = {
@@ -140,67 +137,67 @@ export type Semester = {
 
 export const programCalendar: Semester[] = [
   {
-    name: "Fall Semester",
+    name: "Fall",
     entries: [
       {
         months: "Aug / Sep",
-        title: "Recruitment & welcome meeting",
+        title: "Welcome & recruitment",
         detail:
-          "Chapters open membership, hold their first meeting, and introduce the Amplify HQ model to new members.",
+          "Chapters open membership, host their first meeting, and set the year's goals with new members.",
         kind: "meeting",
       },
       {
         months: "October",
-        title: "Consumer psychology workshop",
+        title: "Why people buy",
         detail:
-          "How buying decisions actually get made — attention, framing, and the psychology behind what people choose.",
+          "A workshop on consumer psychology — how attention, framing, and small design choices shape what people pick.",
         kind: "workshop",
       },
       {
         months: "November",
-        title: "Marketing & branding workshop",
+        title: "What makes a brand stick",
         detail:
-          "What separates a brand people remember from one they scroll past, and the behavioral principles underneath it.",
+          "Marketing and branding, and the behavioral reasons some brands live in your head while others disappear.",
         kind: "workshop",
       },
       {
         months: "December",
-        title: "Guest speaker & semester reflection",
+        title: "A conversation with someone doing the work",
         detail:
-          "A professional from business, psychology, or a field between them — followed by a chapter debrief on the term.",
+          "A guest from business, psychology, or somewhere in between — and time for the questions students actually want to ask.",
         kind: "speaker",
       },
     ],
   },
   {
-    name: "Spring Semester",
+    name: "Spring",
     entries: [
       {
         months: "January",
-        title: "Behavioral economics workshop",
+        title: "How people actually decide",
         detail:
-          "Cognitive biases, incentives, and why rational-actor models miss how people really decide.",
+          "Behavioral economics — biases, incentives, and why textbook rationality misses how choices really get made.",
         kind: "workshop",
       },
       {
         months: "February",
-        title: "Business case study competition",
+        title: "Case competition",
         detail:
-          "Teams analyze a real business problem and defend a recommendation in front of judges.",
+          "Teams take on a real business problem and defend a recommendation in front of judges from the partner network.",
         kind: "competition",
       },
       {
         months: "March",
-        title: "Consulting & presentation workshop",
+        title: "Building an argument that lands",
         detail:
-          "Structuring an argument, building a deck, and presenting to an audience that asks hard questions.",
+          "Consulting fundamentals — structuring a case, building a deck, presenting to a room that pushes back.",
         kind: "workshop",
       },
       {
         months: "April",
-        title: "Member showcase & officer transition",
+        title: "Year-end showcase",
         detail:
-          "Members present the year's work, chapters recognize standout contributors, and next year's officers step up.",
+          "Members present the year's projects, chapters recognize standout contributors, and next year's officers step up.",
         kind: "showcase",
       },
     ],
@@ -211,50 +208,128 @@ export const programCalendar: Semester[] = [
  * Homepage content
  * ---------------------------------------------------------------- */
 
-export type WhatWeDo = {
+export type Pillar = {
   index: string;
   title: string;
   lede: string;
   detail: string;
 };
 
-export const whatWeDo: WhatWeDo[] = [
+export const pillars: Pillar[] = [
   {
     index: "01",
     title: "Learn",
-    lede: "Workshops in consumer psychology, marketing, and behavioral economics.",
+    lede: "Workshops on the questions your school doesn't teach.",
     detail:
-      "Monthly sessions cover the material most high schools never offer — how attention works, why people buy, and what actually drives a decision.",
+      "Why people buy. What makes a leader worth following. How brands live in your head. The psychology behind the business, taught by students and professionals together.",
   },
   {
     index: "02",
     title: "Connect",
-    lede: "Guest speakers and professionals from business and behavioral fields.",
+    lede: "Real conversations with the people doing the work.",
     detail:
-      "Chapters bring in people already doing the work, in formats small enough that a student can ask a real question and get a real answer.",
+      "Founders, marketers, researchers, and consultants — in rooms small enough that a student can ask a real question and get a real answer.",
   },
   {
     index: "03",
     title: "Build",
-    lede: "Case competitions, consulting projects, and a year-end showcase.",
+    lede: "Actual projects with actual audiences.",
     detail:
-      "Members produce work with an audience — analyses, recommendations, and presentations defended in front of judges and partners.",
+      "A case competition every February. Consulting projects with local businesses. A year-end showcase where members present the work they did.",
   },
 ];
 
-export type Intersection = {
+/* Concrete curiosity questions — the beating heart of the site copy. */
+export const openingQuestions = [
+  "What makes someone choose one product over another?",
+  "Why do some brands stick while others disappear?",
+  "How do great leaders actually get people to follow them?",
+  "What separates an idea people talk about from one they act on?",
+  "Why do smart people make bad decisions?",
+];
+
+export type Field = {
   title: string;
-  detail: string;
+  question: string;
 };
 
-export const businessXPsychology: Intersection[] = [
-  { title: "Consumer behavior", detail: "Why people buy, and how attention gets earned." },
-  { title: "Marketing psychology", detail: "Framing, narrative, and persuasion in modern brands." },
-  { title: "Product & UX", detail: "Designing for how people actually think and decide." },
-  { title: "Entrepreneurship", detail: "Building around real human problems." },
-  { title: "Leadership", detail: "Motivation, culture, and the psychology of teams." },
-  { title: "Behavioral economics", detail: "Incentives, biases, and decision architecture." },
-  { title: "Decision-making", detail: "Frameworks for hard calls under uncertainty." },
+/* Replaces the abstract "intersection points of study" grid. */
+export const fields: Field[] = [
+  {
+    title: "Consumer behavior",
+    question: "What actually happens in someone's head before they buy?",
+  },
+  {
+    title: "Brand & marketing",
+    question: "Why do you remember one ad and forget a thousand others?",
+  },
+  {
+    title: "Product & design",
+    question: "How do you build something people don't have to be taught to use?",
+  },
+  {
+    title: "Entrepreneurship",
+    question: "What separates a business people love from one they tolerate?",
+  },
+  {
+    title: "Leadership",
+    question: "Why do people follow one person and quietly ignore another?",
+  },
+  {
+    title: "Behavioral economics",
+    question: "Why do people make choices that don't match what they want?",
+  },
+];
+
+/* Who chapters bring into the room. */
+export const professionalRoles = [
+  "Founders",
+  "Marketers",
+  "Consultants",
+  "Researchers",
+  "Product designers",
+  "Executives",
+];
+
+/* Ways different audiences can participate — for the "who's this for" section. */
+export type Audience = {
+  label: string;
+  question: string;
+  cta: string;
+  href: string;
+};
+
+export const audiences: Audience[] = [
+  {
+    label: "For students",
+    question: "Curious about business, brands, marketing, or how people work?",
+    cta: "Find your chapter",
+    href: "/chapters",
+  },
+  {
+    label: "For future chapter leads",
+    question: "Want to build this at your own high school?",
+    cta: "Apply to lead",
+    href: "/start-a-chapter",
+  },
+  {
+    label: "For professionals",
+    question: "Willing to spend an hour telling students what you actually do?",
+    cta: "Speak to a chapter",
+    href: "/partners",
+  },
+  {
+    label: "For businesses",
+    question: "Have a real problem a team of sharp students could take a swing at?",
+    cta: "Host a project",
+    href: "/partners",
+  },
+  {
+    label: "For supporters",
+    question: "Believe high schoolers deserve this kind of exposure?",
+    cta: "Support the work",
+    href: "/donate",
+  },
 ];
 
 /* ---------------------------------------------------------------- *
@@ -273,7 +348,7 @@ export const partnerPathways: PartnerPathway[] = [
     index: "01",
     title: "Speak to a chapter",
     detail:
-      "Share what your work actually looks like — the path in, the parts nobody warns you about, and what you'd tell a student starting now.",
+      "Tell students what your work actually looks like — the path in, the parts nobody warns you about, what you wish someone had told you.",
     commitment: "One hour, once",
   },
   {
@@ -302,8 +377,8 @@ export const partnerPathways: PartnerPathway[] = [
 export type PartnerCategory = { label: string; note: string };
 
 export const partnerCategories: PartnerCategory[] = [
-  { label: "Business partners", note: "Consulting hosts, internships, project sponsors." },
-  { label: "Professional partners", note: "Guest speakers, mentors, competition judges." },
-  { label: "Educational partners", note: "Schools, universities, faculty sponsors." },
-  { label: "Community partners", note: "Nonprofits and civic groups on joint initiatives." },
+  { label: "Businesses", note: "Consulting hosts, internships, project sponsors." },
+  { label: "Professionals", note: "Speakers, mentors, competition judges." },
+  { label: "Schools & universities", note: "Faculty sponsors, campus partners." },
+  { label: "Community organizations", note: "Nonprofits and civic groups on joint work." },
 ];

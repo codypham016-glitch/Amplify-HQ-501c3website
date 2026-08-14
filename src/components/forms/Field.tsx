@@ -21,25 +21,25 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
     [error ? errorId : null, hint ? hintId : null].filter(Boolean).join(" ") || undefined;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2.5">
       <label
         htmlFor={id}
-        className="font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.14em] text-[color:var(--color-charcoal)]"
+        className="font-[family-name:var(--font-mono)] text-[0.72rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink)]"
       >
         {label}
         {required ? (
-          <span className="ml-1 text-[color:var(--color-accent-warm)]" aria-hidden>
+          <span className="ml-1 text-[color:var(--color-signal)]" aria-hidden>
             *
           </span>
         ) : (
-          <span className="ml-2 font-normal normal-case tracking-normal text-[color:var(--color-gray-muted)]">
+          <span className="ml-2 font-normal normal-case tracking-normal text-[color:var(--color-stone)]">
             (optional)
           </span>
         )}
       </label>
 
       {hint ? (
-        <p id={hintId} className="text-sm text-[color:var(--color-gray-muted)]">
+        <p id={hintId} className="text-sm italic text-[color:var(--color-ink-2)]">
           {hint}
         </p>
       ) : null}
@@ -54,7 +54,7 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
       {error ? (
         <p
           id={errorId}
-          className="text-sm font-medium text-[color:var(--color-accent-warm)]"
+          className="text-sm font-medium text-[color:var(--color-signal)]"
         >
           {error}
         </p>
@@ -64,4 +64,4 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
 }
 
 export const inputClass =
-  "w-full border-2 border-[color:var(--color-gray-2)] bg-white px-4 py-3 text-base text-[color:var(--color-charcoal)] transition-colors placeholder:text-[color:var(--color-gray-muted)] focus:border-[color:var(--color-teal)] focus:outline-none aria-[invalid=true]:border-[color:var(--color-accent-warm)]";
+  "w-full border-b border-[color:var(--color-ink)] bg-transparent px-0 py-3 text-base text-[color:var(--color-ink)] transition-colors placeholder:text-[color:var(--color-stone)] focus:border-[color:var(--color-signal)] focus:outline-none aria-[invalid=true]:border-[color:var(--color-signal)]";

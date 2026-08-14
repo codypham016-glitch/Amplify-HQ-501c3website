@@ -1,53 +1,40 @@
 import Link from "next/link";
-import { AmplifyMark } from "@/components/brand/AmplifyMark";
 
 type WordmarkProps = {
   tone?: "dark" | "light";
   size?: "sm" | "md";
   className?: string;
-  showTag?: boolean;
 };
 
-export function Wordmark({
-  tone = "dark",
-  size = "md",
-  className = "",
-  showTag = true,
-}: WordmarkProps) {
-  const inkClass =
-    tone === "light" ? "text-white" : "text-[color:var(--color-charcoal)]";
-  const tagClass =
-    tone === "light"
-      ? "text-white/60"
-      : "text-[color:var(--color-gray-muted)]";
-  const markSize = size === "sm" ? 28 : 34;
-  const wordSize = size === "sm" ? "text-lg" : "text-xl";
+/**
+ * Editorial wordmark — serif name paired with a mono "HQ" tag.
+ * The typographic pairing itself carries the identity.
+ */
+export function Wordmark({ tone = "dark", size = "md", className = "" }: WordmarkProps) {
+  const inkClass = tone === "light" ? "text-[color:var(--color-bone)]" : "text-[color:var(--color-ink)]";
+  const tagClass = tone === "light" ? "text-[color:var(--color-bone)]/60" : "text-[color:var(--color-stone)]";
+  const dotClass = tone === "light" ? "bg-[color:var(--color-signal)]" : "bg-[color:var(--color-signal)]";
+  const wordSize = size === "sm" ? "text-xl" : "text-[1.65rem]";
 
   return (
     <Link
       href="/"
       aria-label="Amplify HQ home"
-      className={`group inline-flex items-center gap-3 ${className}`}
+      className={`group inline-flex items-baseline gap-2.5 ${className}`}
     >
-      <AmplifyMark
-        size={markSize}
-        tone={tone === "light" ? "light" : "dark"}
-        ariaHidden
-        className="transition-transform duration-200 group-hover:scale-110"
+      <span
+        className={`font-[family-name:var(--font-serif)] leading-none tracking-[-0.015em] ${wordSize} ${inkClass}`}
+      >
+        Amplify
+      </span>
+      <span
+        className={`h-1.5 w-1.5 translate-y-[-2px] shrink-0 rounded-full ${dotClass}`}
+        aria-hidden
       />
-      <span className="flex items-baseline gap-1.5">
-        <span
-          className={`font-[family-name:var(--font-display)] font-medium tracking-[-0.02em] leading-none ${wordSize} ${inkClass}`}
-        >
-          Amplify
-        </span>
-        {showTag ? (
-          <span
-            className={`font-[family-name:var(--font-mono)] text-[0.65rem] font-medium uppercase tracking-[0.18em] ${tagClass}`}
-          >
-            HQ
-          </span>
-        ) : null}
+      <span
+        className={`font-[family-name:var(--font-mono)] text-[0.68rem] font-medium uppercase tracking-[0.24em] ${tagClass}`}
+      >
+        HQ
       </span>
     </Link>
   );

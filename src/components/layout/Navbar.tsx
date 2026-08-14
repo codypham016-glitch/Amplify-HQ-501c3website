@@ -29,10 +29,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-200 ease-out ${
+      className={`sticky top-0 z-40 transition-all duration-300 ease-out ${
         scrolled
-          ? "bg-white/95 backdrop-blur border-b-2 border-[color:var(--color-gray-2)]"
-          : "bg-white/0 border-b-2 border-transparent"
+          ? "bg-[color:var(--color-bone)]/92 backdrop-blur border-b border-[color:var(--color-line)]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <Container>
@@ -41,18 +41,18 @@ export function Navbar() {
 
           <nav
             aria-label="Primary"
-            className="hidden lg:flex items-center gap-1 text-sm font-medium text-[color:var(--color-charcoal)]"
+            className="hidden lg:flex items-center gap-7 text-[0.92rem] text-[color:var(--color-ink)]"
           >
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative rounded-md px-4 py-2 transition-colors hover:text-[color:var(--color-teal)]"
+                className="group relative py-2 transition-colors hover:text-[color:var(--color-signal)]"
               >
                 <span>{item.label}</span>
                 <span
                   aria-hidden
-                  className="absolute inset-x-4 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-[color:var(--color-teal)] transition-transform duration-200 ease-out group-hover:scale-x-100"
+                  className="absolute inset-x-0 -bottom-0.5 h-[1.5px] origin-left scale-x-0 bg-[color:var(--color-signal)] transition-transform duration-300 ease-out group-hover:scale-x-100"
                 />
               </Link>
             ))}
@@ -64,7 +64,6 @@ export function Navbar() {
               variant="primary"
               size="sm"
               className="hidden sm:inline-flex"
-              trailing="→"
             >
               Apply
             </Button>
@@ -73,7 +72,7 @@ export function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden flex flex-col items-end gap-1.5 p-2 text-[color:var(--color-charcoal)]"
+              className="lg:hidden flex flex-col items-end gap-1.5 p-2 text-[color:var(--color-ink)]"
             >
               <span
                 className={`block h-px w-6 bg-current transition-all duration-300 ${
@@ -96,9 +95,9 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-white border-t-2 border-[color:var(--color-gray-2)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-[color:var(--color-bone)] border-t border-[color:var(--color-line)] overflow-y-auto">
           <Container>
-            <nav aria-label="Mobile" className="flex flex-col divide-y-2 divide-[color:var(--color-gray-2)]">
+            <nav aria-label="Mobile" className="flex flex-col divide-y divide-[color:var(--color-line)]">
               {primaryNav.map((item, i) => (
                 <Link
                   key={item.href}
@@ -106,7 +105,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="flex items-baseline justify-between py-5"
                 >
-                  <span className="font-[family-name:var(--font-display)] text-2xl font-bold">
+                  <span className="font-[family-name:var(--font-serif)] text-3xl leading-none">
                     {item.label}
                   </span>
                   <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>

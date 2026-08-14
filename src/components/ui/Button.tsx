@@ -1,29 +1,31 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "on-dark" | "on-dark-outline";
+type Variant = "primary" | "secondary" | "ghost" | "on-dark" | "on-dark-outline" | "link";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-3 whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2.5 font-medium transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-3 whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[color:var(--color-teal)] text-[color:var(--color-charcoal)] font-semibold hover:bg-[color:var(--color-teal-light)] hover:shadow-lg hover:-translate-y-0.5",
+    "bg-[color:var(--color-ink)] text-[color:var(--color-bone)] hover:bg-[color:var(--color-signal)]",
   secondary:
-    "bg-transparent text-[color:var(--color-charcoal)] border-2 border-[color:var(--color-charcoal)] hover:bg-[color:var(--color-charcoal)] hover:text-white",
+    "bg-transparent text-[color:var(--color-ink)] border border-[color:var(--color-ink)] hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bone)]",
   ghost:
-    "bg-transparent text-[color:var(--color-charcoal)] hover:text-[color:var(--color-teal)] hover:underline",
+    "bg-transparent text-[color:var(--color-ink)] hover:text-[color:var(--color-signal)]",
   "on-dark":
-    "bg-[color:var(--color-teal)] text-[color:var(--color-charcoal)] font-semibold hover:bg-[color:var(--color-teal-light)] hover:-translate-y-0.5",
+    "bg-[color:var(--color-bone)] text-[color:var(--color-ink)] hover:bg-[color:var(--color-signal)] hover:text-[color:var(--color-bone)]",
   "on-dark-outline":
-    "bg-transparent text-[color:var(--color-teal)] border-2 border-[color:var(--color-teal)] hover:bg-[color:var(--color-teal)]/10",
+    "bg-transparent text-[color:var(--color-bone)] border border-[color:var(--color-bone)]/40 hover:border-[color:var(--color-bone)] hover:bg-[color:var(--color-bone)]/10",
+  link:
+    "text-[color:var(--color-ink)] underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[color:var(--color-ink)] hover:decoration-[2px] px-0",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-7 py-3.5 text-base",
+  sm: "px-5 py-2.5 text-sm",
+  md: "px-6 py-3 text-sm",
+  lg: "px-7 py-4 text-base",
 };
 
 type CommonProps = {
@@ -48,12 +50,13 @@ export type ButtonProps = LinkVariantProps | ButtonVariantProps;
 
 export function Button(props: ButtonProps) {
   const { variant = "primary", size = "md", children, className = "", trailing, ...rest } = props;
-  const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+  const isLink = variant === "link";
+  const classes = `${base} ${variants[variant]} ${isLink ? "" : sizes[size]} ${className}`;
 
   const body = (
     <>
       <span>{children}</span>
-      {trailing ? <span aria-hidden>{trailing}</span> : null}
+      {trailing ? <span aria-hidden className="translate-y-[-1px]">{trailing}</span> : null}
     </>
   );
 

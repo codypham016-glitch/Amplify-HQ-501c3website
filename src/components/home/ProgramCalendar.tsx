@@ -11,57 +11,62 @@ const kindLabel: Record<string, string> = {
   showcase: "Showcase",
 };
 
+/**
+ * The program year — editorial timeline. Each entry is a row, not a
+ * card. Semesters are titled sections with a bold rule underneath.
+ */
 export function ProgramCalendar() {
   return (
-    <section className="bg-[color:var(--color-gray-light)] py-24 lg:py-32">
+    <section className="bg-[color:var(--color-bone-2)] py-24 lg:py-36">
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <SectionLabel index="03">The chapter year</SectionLabel>
-            <h2 className="mt-6 font-[family-name:var(--font-display)] font-bold uppercase text-[length:var(--text-display)] leading-[0.95] tracking-[-0.03em] text-[color:var(--color-charcoal)]">
-              Eight months.
+            <SectionLabel index="§ Cal">The chapter year</SectionLabel>
+            <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-ink)]">
+              Eight meetings.
               <br />
-              <span className="text-[color:var(--color-gray-muted)]">One meeting a month.</span>
+              <em className="text-[color:var(--color-ink-2)]">A working year.</em>
             </h2>
           </div>
-          <p className="lg:col-span-5 lg:col-start-8 self-end text-base leading-relaxed text-[color:var(--color-gray-muted)] sm:text-lg">
-            Every chapter follows the same arc, and each one adapts the focus to
-            the speakers, businesses, and partners available in its own community.
+          <p className="lg:col-span-5 lg:col-start-8 self-end text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+            One meeting a month, across two semesters. The theme is set nationally; the speakers, businesses, and case material are chosen by each chapter to fit its own community.
           </p>
         </div>
 
-        <div className="mt-16 space-y-14">
+        <div className="mt-20 space-y-20">
           {programCalendar.map((semester) => (
             <div key={semester.name}>
-              <div className="flex items-baseline gap-4">
-                <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold tracking-[-0.02em] text-[color:var(--color-charcoal)]">
+              <div className="flex items-baseline justify-between border-b border-[color:var(--color-ink)] pb-4">
+                <h3 className="font-[family-name:var(--font-serif)] text-4xl leading-none text-[color:var(--color-ink)]">
                   {semester.name}
                 </h3>
-                <span className="h-0.5 flex-1 bg-[color:var(--color-charcoal)]" aria-hidden />
+                <p className="font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)]">
+                  {semester.entries.length} meetings
+                </p>
               </div>
 
-              <ol className="mt-8 grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-4">
+              <ol>
                 {semester.entries.map((entry, i) => (
                   <li
                     key={entry.title}
-                    className={`flex flex-col gap-4 border-t-2 border-[color:var(--color-gray-2)] py-6 lg:py-8 ${
-                      i > 0 ? "md:pl-6 lg:pl-8 md:border-l-2" : ""
-                    } ${i < semester.entries.length - 1 ? "md:pr-6 lg:pr-8" : ""}`}
+                    className="grid grid-cols-12 items-baseline gap-4 border-b border-[color:var(--color-line-2)] py-8 lg:py-10"
                   >
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-charcoal)]">
-                        {entry.months}
-                      </span>
-                      <span className="font-[family-name:var(--font-mono)] text-[0.6rem] font-bold uppercase tracking-[0.14em] text-[color:var(--color-teal)]">
-                        {kindLabel[entry.kind]}
-                      </span>
+                    <span className="col-span-2 font-[family-name:var(--font-mono)] text-[0.72rem] uppercase tracking-[0.2em] text-[color:var(--color-stone)]">
+                      {entry.months}
+                    </span>
+
+                    <div className="col-span-7">
+                      <h4 className="font-[family-name:var(--font-serif)] text-[clamp(1.35rem,2vw,1.85rem)] leading-[1.15] text-[color:var(--color-ink)]">
+                        {entry.title}
+                      </h4>
+                      <p className="mt-3 text-base leading-[1.6] text-[color:var(--color-ink-2)]">
+                        {entry.detail}
+                      </p>
                     </div>
-                    <h4 className="font-[family-name:var(--font-display)] text-lg font-bold leading-tight tracking-[-0.015em] text-[color:var(--color-charcoal)]">
-                      {entry.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-[color:var(--color-gray-muted)]">
-                      {entry.detail}
-                    </p>
+
+                    <span className="col-span-3 text-right font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.2em] text-[color:var(--color-signal)]">
+                      {kindLabel[entry.kind]}
+                    </span>
                   </li>
                 ))}
               </ol>
@@ -69,13 +74,12 @@ export function ProgramCalendar() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t-2 border-[color:var(--color-charcoal)] pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-xl text-sm text-[color:var(--color-gray-muted)]">
-            Chapters set their own dates within each month and choose speakers and
-            partners that fit their school and community.
+        <div className="mt-16 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-t border-[color:var(--color-ink)] pt-8">
+          <p className="max-w-xl font-[family-name:var(--font-serif)] text-xl italic text-[color:var(--color-ink-2)]">
+            Chapters set their own dates within each month.
           </p>
-          <Button href="/programs" variant="secondary" trailing="→">
-            See full programs
+          <Button href="/programs" variant="link">
+            See full programs →
           </Button>
         </div>
       </Container>

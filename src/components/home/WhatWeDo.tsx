@@ -1,46 +1,54 @@
 import { Container } from "@/components/layout/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { whatWeDo } from "@/lib/site";
+import { pillars } from "@/lib/site";
 
+/**
+ * Learn / Connect / Build — the three modes. Not three equal cards.
+ * Each mode is a full-width editorial band with a large index number,
+ * an italic serif question, and a supporting paragraph.
+ */
 export function WhatWeDo() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="bg-[color:var(--color-bone)] py-24 lg:py-36">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
-            <SectionLabel index="01">The member experience</SectionLabel>
-            <SectionHeading as="h2" size="display" className="mt-6">
-              Three core pillars, every semester.
-            </SectionHeading>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <SectionLabel index="§ 03">How Amplify works</SectionLabel>
+            <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-ink)]">
+              Three ways in.
+            </h2>
           </div>
-          <p className="lg:col-span-6 lg:col-start-7 text-base leading-relaxed text-[color:var(--color-gray-muted)] sm:text-lg">
-            Whether it's a workshop, networking night, or consulting project — every chapter follows the same rhythm. Learn. Connect. Build.
+          <p className="lg:col-span-7 lg:col-start-6 self-end text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+            Every chapter runs on the same rhythm — a workshop, a conversation, a project — repeated across eight months so members build both the vocabulary and the résumé.
           </p>
         </div>
 
-        <ol className="mt-16 grid grid-cols-1 gap-0 border-t-2 border-[color:var(--color-charcoal)] lg:grid-cols-3">
-          {whatWeDo.map((w, i) => (
+        <ol className="mt-20 space-y-0">
+          {pillars.map((p, idx) => (
             <li
-              key={w.index}
-              className={`flex flex-col gap-6 py-10 lg:py-14 pl-0 pr-0 ${
-                i > 0 ? "border-t-2 border-[color:var(--color-charcoal)] lg:border-t-0 lg:border-l-2 lg:pl-10" : ""
-              } ${i < whatWeDo.length - 1 ? "lg:pr-10" : ""}`}
+              key={p.index}
+              className="grid grid-cols-1 gap-8 border-t border-[color:var(--color-line)] py-12 lg:grid-cols-12 lg:gap-10 lg:py-16"
             >
-              <div>
-                <span className="inline-block px-3 py-1.5 bg-[color:var(--color-teal)] text-[color:var(--color-charcoal)] font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.16em]">
-                  {w.index}
-                </span>
+              <div className="lg:col-span-2">
+                <p className="font-[family-name:var(--font-serif)] italic text-6xl leading-none text-[color:var(--color-signal)] lg:text-7xl">
+                  {String(idx + 1).padStart(2, "0")}
+                </p>
               </div>
-              <h3 className="font-[family-name:var(--font-display)] text-[clamp(2rem,3.5vw,3.5rem)] leading-[0.95] tracking-[-0.03em] font-bold text-[color:var(--color-charcoal)]">
-                {w.title}
-              </h3>
-              <p className="text-base leading-relaxed text-[color:var(--color-charcoal)]">
-                <span className="font-semibold">{w.lede}</span>
-              </p>
-              <p className="text-sm leading-relaxed text-[color:var(--color-gray-muted)]">
-                {w.detail}
-              </p>
+
+              <div className="lg:col-span-4">
+                <p className="font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)]">
+                  {p.title}
+                </p>
+                <p className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] text-[color:var(--color-ink)]">
+                  {p.lede}
+                </p>
+              </div>
+
+              <div className="lg:col-span-5 lg:col-start-8">
+                <p className="text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+                  {p.detail}
+                </p>
+              </div>
             </li>
           ))}
         </ol>

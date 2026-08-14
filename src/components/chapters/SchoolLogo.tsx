@@ -9,10 +9,8 @@ type SchoolLogoProps = {
 };
 
 /**
- * Renders a school's logo when a file exists at
- * /public/schools/{slug}.{svg|png|webp|jpg}, and a clean monogram
- * tile when it doesn't. The layout is identical either way, so
- * adding real logos later never shifts the design.
+ * Real school logo when a file exists at /public/schools/{slug}.{svg|png|webp|jpg}.
+ * Otherwise, a serif monogram — no border, no box, just editorial letterform.
  */
 export function SchoolLogo({ chapter, size = 64, tone = "dark" }: SchoolLogoProps) {
   const src = resolveSchoolLogo(chapter.slug);
@@ -20,7 +18,7 @@ export function SchoolLogo({ chapter, size = 64, tone = "dark" }: SchoolLogoProp
   if (src) {
     return (
       <div
-        className="relative shrink-0 overflow-hidden bg-white"
+        className="relative shrink-0 overflow-hidden bg-[color:var(--color-paper)]"
         style={{ width: size, height: size }}
       >
         <Image
@@ -34,20 +32,17 @@ export function SchoolLogo({ chapter, size = 64, tone = "dark" }: SchoolLogoProp
     );
   }
 
-  const borderClass =
-    tone === "light"
-      ? "border-[color:var(--color-teal)] text-[color:var(--color-teal)]"
-      : "border-[color:var(--color-charcoal)] text-[color:var(--color-charcoal)]";
+  const colorClass = tone === "light" ? "text-[color:var(--color-signal-tint)]" : "text-[color:var(--color-signal)]";
 
   return (
     <div
       aria-hidden
-      className={`flex shrink-0 items-center justify-center border-2 ${borderClass}`}
+      className={`flex shrink-0 items-center justify-center ${colorClass}`}
       style={{ width: size, height: size }}
     >
       <span
-        className="font-[family-name:var(--font-display)] font-bold leading-none"
-        style={{ fontSize: size * 0.44 }}
+        className="font-[family-name:var(--font-serif)] italic leading-none"
+        style={{ fontSize: size * 0.85 }}
       >
         {chapter.monogram}
       </span>

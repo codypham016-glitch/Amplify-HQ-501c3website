@@ -1,67 +1,51 @@
 import { Container } from "@/components/layout/Container";
-import { NeuralNetwork } from "@/components/brand/NeuralNetwork";
-import { businessXPsychology } from "@/lib/site";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { fields } from "@/lib/site";
 
+/**
+ * The fields Amplify covers — but framed as questions students want
+ * answered, not "seven intersection points of study". Editorial index
+ * layout: two-column with a leading question and hanging labels.
+ */
 export function BusinessXPsychology() {
-  const concepts = businessXPsychology.map((item) => item.title);
-
   return (
-    <section className="relative bg-[color:var(--color-charcoal)] py-28 text-white lg:py-40">
+    <section className="bg-[color:var(--color-moss)] py-24 text-[color:var(--color-bone)] lg:py-36">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: The intersection */}
-          <div className="flex flex-col justify-center">
-            <p className="eyebrow-on-dark mb-4">The core concept</p>
-            <h2 className="font-[family-name:var(--font-display)] font-bold uppercase leading-[0.9] tracking-[-0.035em] text-white text-[length:var(--text-display)]">
-              Business
-              <br />
-              <span className="inline-block text-[length:clamp(3rem,8vw,6rem)] text-[color:var(--color-teal)] font-light my-2">
-                ×
-              </span>
-              <br />
-              Psychology
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionLabel index="§ 05" tone="dark">The subject matter</SectionLabel>
+
+            <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-bone)]">
+              Business is a study of{" "}
+              <em className="text-[color:var(--color-signal-tint)]">people</em>{" "}
+              wearing suits.
             </h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-white/75 lg:text-lg">
-              Most programs separate them. We teach them as one field — showing students how human behavior shapes business decisions, marketing, products, and leadership.
+
+            <p className="mt-8 max-w-md text-lg leading-[1.65] text-[color:var(--color-bone)]/75">
+              Every field we teach is a different angle on the same question: why do humans do what they do, and how do businesses succeed or fail depending on how well they understand the answer?
             </p>
           </div>
 
-          {/* Right: Neural network showing intersections */}
-          <div className="flex flex-col items-center justify-center">
-            <NeuralNetwork
-              nodes={concepts}
-              size={360}
-              tone="light"
-              className="w-full max-w-sm"
-            />
-            <p className="mt-8 text-center text-xs text-white/60 font-[family-name:var(--font-mono)] uppercase tracking-[0.16em]">
-              Seven intersection points of study
-            </p>
-          </div>
-        </div>
-
-        {/* Grid of concepts */}
-        <div className="mt-16 border-t-2 border-white/10 pt-12">
-          <p className="eyebrow-on-dark mb-8">What students learn</p>
-          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {businessXPsychology.map((item, i) => (
-              <li key={item.title} className="group">
-                <div className="flex items-start gap-3">
-                  <span className="text-[color:var(--color-teal)] font-[family-name:var(--font-mono)] text-sm font-bold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="font-[family-name:var(--font-display)] font-semibold text-white leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/70">
-                      {item.detail}
-                    </p>
-                  </div>
+          <ol className="lg:col-span-6 lg:col-start-7 flex flex-col">
+            {fields.map((f, i) => (
+              <li
+                key={f.title}
+                className="grid grid-cols-12 gap-4 border-t border-[color:var(--color-bone)]/15 py-6 last:border-b lg:py-8"
+              >
+                <span className="col-span-2 font-[family-name:var(--font-mono)] text-xs tracking-[0.16em] text-[color:var(--color-bone)]/50 pt-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="col-span-10">
+                  <p className="font-[family-name:var(--font-mono)] text-[0.72rem] uppercase tracking-[0.22em] text-[color:var(--color-signal-tint)]">
+                    {f.title}
+                  </p>
+                  <p className="mt-3 font-[family-name:var(--font-serif)] italic text-[clamp(1.25rem,1.9vw,1.6rem)] leading-[1.25] text-[color:var(--color-bone)]">
+                    {f.question}
+                  </p>
                 </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </Container>
     </section>

@@ -62,15 +62,16 @@ export function ChapterLeadForm() {
       <div
         ref={statusRef}
         tabIndex={-1}
-        className="border-2 border-[color:var(--color-teal)] bg-[color:var(--color-teal)]/5 p-8"
+        className="border-l-2 border-[color:var(--color-signal)] bg-[color:var(--color-paper)] p-10"
       >
-        <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[color:var(--color-charcoal)]">
-          Application received.
+        <p className="font-[family-name:var(--font-mono)] text-[0.72rem] uppercase tracking-[0.22em] text-[color:var(--color-signal)]">
+          Received
+        </p>
+        <h3 className="mt-4 font-[family-name:var(--font-serif)] text-3xl leading-[1.1] text-[color:var(--color-ink)]">
+          Your application is in.
         </h3>
-        <p className="mt-4 text-[color:var(--color-gray-muted)]">
-          A member of the national team will review it and follow up by email to
-          set up an introductory call. Applications are read by a person, so give
-          us a few days.
+        <p className="mt-6 text-base leading-[1.65] text-[color:var(--color-ink-2)]">
+          A member of the national team will read it and follow up by email to set up an introductory call. Applications are reviewed by a person, so give us a few days.
         </p>
       </div>
     );
@@ -83,16 +84,16 @@ export function ChapterLeadForm() {
           ref={statusRef}
           tabIndex={-1}
           role="alert"
-          className="border-2 border-[color:var(--color-accent-warm)] bg-[color:var(--color-accent-warm)]/5 p-6"
+          className="border-l-2 border-[color:var(--color-signal)] bg-[color:var(--color-paper)] p-6"
         >
-          <p className="font-semibold text-[color:var(--color-charcoal)]">
+          <p className="font-[family-name:var(--font-serif)] text-xl leading-[1.3] text-[color:var(--color-ink)]">
             {"message" in result ? result.message : "Something went wrong."}
           </p>
-          <p className="mt-3 text-sm text-[color:var(--color-gray-muted)]">
+          <p className="mt-4 text-sm text-[color:var(--color-ink-2)]">
             Email{" "}
             <a
               href={`mailto:${site.contactEmail}?subject=Chapter%20Lead%20Application`}
-              className="font-semibold text-[color:var(--color-teal)] underline underline-offset-4"
+              className="text-[color:var(--color-ink)] underline decoration-[color:var(--color-signal)] underline-offset-4"
             >
               {site.contactEmail}
             </a>{" "}
@@ -103,7 +104,7 @@ export function ChapterLeadForm() {
 
       {/* About you */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-display)] text-xl font-bold text-[color:var(--color-charcoal)]">
+        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
           About you
         </legend>
 
@@ -198,7 +199,7 @@ export function ChapterLeadForm() {
 
       {/* Your interest */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-display)] text-xl font-bold text-[color:var(--color-charcoal)]">
+        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
           Why Amplify HQ
         </legend>
 
@@ -239,12 +240,11 @@ export function ChapterLeadForm() {
 
       {/* Building the chapter */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-display)] text-xl font-bold text-[color:var(--color-charcoal)]">
+        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
           Building the chapter
         </legend>
-        <p className="-mt-4 text-sm text-[color:var(--color-gray-muted)]">
-          No experience required — these help us understand where you&apos;re
-          starting from. Leave anything blank if it doesn&apos;t apply.
+        <p className="-mt-4 text-sm italic text-[color:var(--color-ink-2)]">
+          No experience required — these help us understand where you&apos;re starting from. Leave anything blank if it doesn&apos;t apply.
         </p>
 
         <Field
@@ -298,11 +298,9 @@ export function ChapterLeadForm() {
         </Field>
       </fieldset>
 
-      <div className="flex flex-col gap-4 border-t-2 border-[color:var(--color-charcoal)] pt-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-[color:var(--color-gray-muted)]">
-          Fields marked{" "}
-          <span className="text-[color:var(--color-accent-warm)]">*</span> are
-          required. Applications are reviewed by a person.
+      <div className="flex flex-col gap-6 border-t border-[color:var(--color-ink)] pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm italic text-[color:var(--color-ink-2)]">
+          Fields marked <span className="text-[color:var(--color-signal)]">*</span> are required. Applications are reviewed by a person.
         </p>
         <Button type="submit" size="lg" disabled={pending} trailing={pending ? undefined : "→"}>
           {pending ? "Submitting…" : "Submit application"}

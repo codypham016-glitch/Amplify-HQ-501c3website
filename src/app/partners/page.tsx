@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { partnerPathways, partnerCategories, site } from "@/lib/site";
 
@@ -13,57 +13,71 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
-      <section className="bg-white py-20 lg:py-28">
+      <section className="py-24 lg:py-36">
         <Container>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-8">
               <SectionLabel>Partners</SectionLabel>
-              <h1 className="mt-6 font-[family-name:var(--font-display)] font-bold uppercase text-[length:var(--text-display)] leading-[0.95] tracking-[-0.03em] text-[color:var(--color-charcoal)]">
-                Give a student
-                <br />
-                <span className="text-[color:var(--color-gray-muted)]">a real audience.</span>
+              <h1 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-hero)] leading-[1] tracking-[-0.02em] text-[color:var(--color-ink)]">
+                Give a student a <em className="text-[color:var(--color-signal)]">real</em> audience.
               </h1>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[color:var(--color-gray-muted)]">
-                Amplify HQ launches in {site.launchTerm}, and we&apos;re building our
-                partner network now. Most partnerships start small — one hour in
-                front of a chapter — and grow from there.
+              <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+                Amplify HQ launches in {site.launchTerm}. Most partnerships start small — one hour in front of a chapter — and grow from there. There&apos;s no committee to join. No form to fill in triplicate. Just a conversation.
               </p>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Button href="/contact" size="lg" trailing="→">
-                  Become a partner
-                </Button>
-                <Button href="/programs" variant="secondary" size="lg">
+              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 text-base underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[2px]"
+                >
+                  Start a conversation
+                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+                <Link
+                  href="/programs"
+                  className="group inline-flex items-center gap-2 text-base underline decoration-[color:var(--color-ink)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[color:var(--color-signal)]"
+                >
                   See the program year
-                </Button>
+                </Link>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-[color:var(--color-gray-light)] py-20 lg:py-28">
+      <section className="bg-[color:var(--color-bone-2)] py-24 lg:py-36">
         <Container>
-          <p className="eyebrow">Ways to work with us</p>
-          <ol className="mt-10 grid grid-cols-1 gap-0 border-t-2 border-[color:var(--color-charcoal)] md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionLabel index="§ Ways">Four ways in</SectionLabel>
+              <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-ink)]">
+                Pick a shape that fits.
+              </h2>
+            </div>
+            <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+              The commitment scales. An hour, an evening, a term, a summer. Any of them help — none of them require the others.
+            </p>
+          </div>
+
+          <ol className="mt-16 border-t border-[color:var(--color-ink)]">
             {partnerPathways.map((p, i) => (
               <li
                 key={p.title}
-                className={`flex flex-col gap-4 border-b-2 border-[color:var(--color-gray-2)] py-8 lg:py-10 ${
-                  i % 2 === 1 ? "md:border-l-2 md:pl-10" : "md:pr-10"
-                }`}
+                className="grid grid-cols-1 gap-6 border-b border-[color:var(--color-line-2)] py-10 lg:grid-cols-12 lg:gap-10 lg:py-14"
               >
-                <div className="flex items-center justify-between gap-4">
-                  <span className="font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-gray-muted)]">
-                    {p.index}
-                  </span>
-                  <span className="border-2 border-[color:var(--color-teal)] bg-[color:var(--color-teal)]/10 px-2.5 py-1 font-[family-name:var(--font-mono)] text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[color:var(--color-teal)]">
-                    {p.commitment}
-                  </span>
+                <div className="lg:col-span-1">
+                  <p className="font-[family-name:var(--font-mono)] text-[0.72rem] tracking-[0.22em] text-[color:var(--color-stone)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
                 </div>
-                <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold leading-tight tracking-[-0.02em] text-[color:var(--color-charcoal)]">
-                  {p.title}
-                </h2>
-                <p className="text-sm leading-relaxed text-[color:var(--color-gray-muted)] sm:text-base">
+                <div className="lg:col-span-5">
+                  <h3 className="font-[family-name:var(--font-serif)] text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] text-[color:var(--color-ink)]">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-signal)]">
+                    {p.commitment}
+                  </p>
+                </div>
+                <p className="lg:col-span-6 text-lg leading-[1.6] text-[color:var(--color-ink-2)]">
                   {p.detail}
                 </p>
               </li>
@@ -72,33 +86,38 @@ export default function PartnersPage() {
         </Container>
       </section>
 
-      <section className="bg-[color:var(--color-charcoal)] py-20 text-white lg:py-28">
+      <section className="bg-[color:var(--color-ink)] py-24 text-[color:var(--color-bone)] lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <p className="eyebrow-on-dark">Partner types</p>
-              <h2 className="mt-6 font-[family-name:var(--font-display)] font-bold uppercase text-[length:var(--text-section)] leading-[1] tracking-[-0.025em]">
-                Who we work with.
+              <SectionLabel tone="dark">Who we work with</SectionLabel>
+              <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-bone)]">
+                We&apos;re building the first partner cohort now.
               </h2>
-              <p className="mt-6 max-w-md text-base leading-relaxed text-white/70">
-                We haven&apos;t announced partners yet — we&apos;re recruiting our first
-                cohort now. If your organization fits one of these, we&apos;d like to
-                talk.
+              <p className="mt-8 max-w-md text-lg leading-[1.65] text-[color:var(--color-bone)]/75">
+                No invented logos. No fabricated partner rosters. If your organization fits below, we&apos;d like to talk.
               </p>
-              <div className="mt-8">
-                <Button href="/contact" variant="on-dark" trailing="→">
-                  Start a conversation
-                </Button>
-              </div>
+              <Link
+                href="/contact"
+                className="mt-10 group inline-flex items-baseline gap-3 font-[family-name:var(--font-serif)] text-2xl italic text-[color:var(--color-bone)] underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[8px] hover:decoration-[2px]"
+              >
+                Get in touch
+                <span aria-hidden className="text-[color:var(--color-signal-tint)] transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
 
-            <ul className="lg:col-span-6 lg:col-start-7 divide-y-2 divide-white/15 border-y-2 border-white/15">
-              {partnerCategories.map((c) => (
-                <li key={c.label} className="py-5">
-                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-white">
-                    {c.label}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-white/65">{c.note}</p>
+            <ul className="lg:col-span-6 lg:col-start-7 divide-y divide-[color:var(--color-bone)]/20 border-y border-[color:var(--color-bone)]/20">
+              {partnerCategories.map((c, i) => (
+                <li key={c.label} className="grid grid-cols-12 items-baseline gap-4 py-6">
+                  <span className="col-span-1 font-[family-name:var(--font-mono)] text-[0.72rem] tracking-[0.22em] text-[color:var(--color-bone)]/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="col-span-11">
+                    <h3 className="font-[family-name:var(--font-serif)] text-2xl leading-none text-[color:var(--color-bone)]">
+                      {c.label}
+                    </h3>
+                    <p className="mt-3 text-sm text-[color:var(--color-bone)]/70">{c.note}</p>
+                  </div>
                 </li>
               ))}
             </ul>

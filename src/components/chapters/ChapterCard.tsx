@@ -7,60 +7,41 @@ type ChapterCardProps = {
   tone?: "light" | "dark";
 };
 
+/**
+ * Editorial "listing" for a chapter — a serif school name over a soft
+ * hairline block. No pill borders, no card shadows.
+ */
 export function ChapterCard({ chapter, index, tone = "dark" }: ChapterCardProps) {
-  const isDark = tone === "light"; // rendered on a dark surface
+  const isDark = tone === "light";
+  const textInk = isDark ? "text-[color:var(--color-bone)]" : "text-[color:var(--color-ink)]";
+  const textMuted = isDark ? "text-[color:var(--color-bone)]/60" : "text-[color:var(--color-ink-2)]";
+  const line = isDark ? "border-[color:var(--color-bone)]/20" : "border-[color:var(--color-line)]";
+  const accent = "text-[color:var(--color-signal)]";
 
   return (
-    <article
-      className={`group flex flex-col gap-6 border-2 p-6 transition-colors lg:p-8 ${
-        isDark
-          ? "border-white/15 hover:border-[color:var(--color-teal)]"
-          : "border-[color:var(--color-gray-2)] hover:border-[color:var(--color-teal)]"
-      }`}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <SchoolLogo chapter={chapter} size={64} tone={tone} />
-        <span
-          className={`font-[family-name:var(--font-mono)] text-[0.65rem] font-bold uppercase tracking-[0.16em] ${
-            isDark ? "text-white/50" : "text-[color:var(--color-gray-muted)]"
-          }`}
-        >
+    <article className="flex flex-col gap-6 py-8">
+      <div className="flex items-baseline justify-between gap-4">
+        <span className={`font-[family-name:var(--font-mono)] text-[0.72rem] tracking-[0.22em] ${textMuted}`}>
           {String(index + 1).padStart(2, "0")}
         </span>
+        <SchoolLogo chapter={chapter} size={80} tone={tone} />
       </div>
 
       <div>
-        <h3
-          className={`font-[family-name:var(--font-display)] text-xl font-bold leading-tight tracking-[-0.02em] ${
-            isDark ? "text-white" : "text-[color:var(--color-charcoal)]"
-          }`}
-        >
+        <h3 className={`font-[family-name:var(--font-serif)] text-3xl leading-[1.05] ${textInk}`}>
           {chapter.school}
         </h3>
-        <p
-          className={`mt-2 text-sm ${
-            isDark ? "text-white/65" : "text-[color:var(--color-gray-muted)]"
-          }`}
-        >
+        <p className={`mt-3 text-sm ${textMuted}`}>
           {chapter.city}, {chapter.state} · {chapter.district}
         </p>
       </div>
 
-      <div
-        className={`mt-auto flex items-center justify-between border-t-2 pt-4 ${
-          isDark ? "border-white/10" : "border-[color:var(--color-gray-2)]"
-        }`}
-      >
-        <span className="inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[color:var(--color-teal)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-teal)]" aria-hidden />
-          Founding chapter
+      <div className={`mt-auto flex items-baseline justify-between border-t pt-4 ${line}`}>
+        <span className={`font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] ${accent}`}>
+          Founding
         </span>
-        <span
-          className={`font-[family-name:var(--font-mono)] text-[0.65rem] uppercase tracking-[0.16em] ${
-            isDark ? "text-white/40" : "text-[color:var(--color-gray-muted)]"
-          }`}
-        >
-          Opens Fall 2026
+        <span className={`font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] ${textMuted}`}>
+          Opens Fall &apos;26
         </span>
       </div>
     </article>

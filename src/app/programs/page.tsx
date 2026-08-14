@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ProgramCalendar } from "@/components/home/ProgramCalendar";
-import { whatWeDo, site } from "@/lib/site";
+import { pillars, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -14,67 +14,70 @@ export const metadata: Metadata = {
 export default function ProgramsPage() {
   return (
     <>
-      <section className="bg-white py-20 lg:py-28">
+      <section className="py-24 lg:py-36">
         <Container>
-          <div className="max-w-3xl">
-            <SectionLabel>Programs</SectionLabel>
-            <h1 className="mt-6 font-[family-name:var(--font-display)] font-bold uppercase text-[length:var(--text-display)] leading-[0.95] tracking-[-0.03em] text-[color:var(--color-charcoal)]">
-              What a year in
-              <br />
-              <span className="text-[color:var(--color-gray-muted)]">Amplify looks like.</span>
-            </h1>
-            <p className="mt-8 text-lg leading-relaxed text-[color:var(--color-gray-muted)]">
-              Chapters meet once a month across two semesters. The national
-              calendar sets the theme; each chapter chooses the speakers,
-              partners, and case material that fit its own community.
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <SectionLabel>Programs</SectionLabel>
+              <h1 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-hero)] leading-[1] tracking-[-0.02em] text-[color:var(--color-ink)]">
+                What a year in Amplify <em className="text-[color:var(--color-ink-2)]">actually</em> looks like.
+              </h1>
+            </div>
+            <p className="lg:col-span-7 max-w-xl text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+              Chapters meet once a month across two semesters. Every meeting is a workshop, a conversation, or a project — never a lecture nobody asked for.
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-0 border-t-2 border-[color:var(--color-charcoal)] lg:grid-cols-3">
-            {whatWeDo.map((w, i) => (
-              <div
-                key={w.index}
-                className={`flex flex-col gap-4 py-8 lg:py-10 ${
-                  i > 0
-                    ? "border-t-2 border-[color:var(--color-gray-2)] lg:border-t-0 lg:border-l-2 lg:pl-10"
-                    : ""
-                } ${i < whatWeDo.length - 1 ? "lg:pr-10" : ""}`}
+          <ol className="mt-24 space-y-0">
+            {pillars.map((p, idx) => (
+              <li
+                key={p.index}
+                className="grid grid-cols-1 gap-8 border-t border-[color:var(--color-line)] py-12 lg:grid-cols-12 lg:gap-10 lg:py-16"
               >
-                <span className="inline-flex w-fit bg-[color:var(--color-teal)] px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-charcoal)]">
-                  {w.index}
-                </span>
-                <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold leading-none tracking-[-0.03em] text-[color:var(--color-charcoal)]">
-                  {w.title}
-                </h2>
-                <p className="font-semibold text-[color:var(--color-charcoal)]">{w.lede}</p>
-                <p className="text-sm leading-relaxed text-[color:var(--color-gray-muted)]">
-                  {w.detail}
+                <div className="lg:col-span-2">
+                  <p className="font-[family-name:var(--font-serif)] italic text-6xl leading-none text-[color:var(--color-signal)]">
+                    {String(idx + 1).padStart(2, "0")}
+                  </p>
+                </div>
+                <div className="lg:col-span-4">
+                  <p className="font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)]">
+                    {p.title}
+                  </p>
+                  <p className="mt-4 font-[family-name:var(--font-serif)] text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] text-[color:var(--color-ink)]">
+                    {p.lede}
+                  </p>
+                </div>
+                <p className="lg:col-span-5 lg:col-start-8 text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
+                  {p.detail}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </Container>
       </section>
 
       <ProgramCalendar />
 
-      <section className="bg-[color:var(--color-charcoal)] py-20 text-white lg:py-28">
+      <section className="bg-[color:var(--color-ink)] py-24 text-[color:var(--color-bone)] lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <p className="eyebrow-on-dark">Launching {site.launchTerm}</p>
-              <h2 className="mt-6 font-[family-name:var(--font-display)] font-bold uppercase text-[length:var(--text-section)] leading-[1] tracking-[-0.025em]">
-                Run this at your school.
+            <div className="lg:col-span-8">
+              <SectionLabel tone="dark">Launching {site.launchTerm}</SectionLabel>
+              <h2 className="mt-10 font-[family-name:var(--font-serif)] text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em] text-[color:var(--color-bone)]">
+                Run this at <em className="text-[color:var(--color-signal-tint)]">your</em> school.
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70">
-                Chapter Leads get the full program calendar, workshop materials,
-                and support from the national team. You bring your campus.
+              <p className="mt-8 max-w-xl text-lg leading-[1.65] text-[color:var(--color-bone)]/75">
+                Chapter Leads get the full program calendar, workshop materials, and support from the national team.
               </p>
             </div>
-            <div className="lg:col-span-4 lg:col-start-9 flex items-end">
-              <Button href="/start-a-chapter" variant="on-dark" size="lg" trailing="→">
+            <div className="lg:col-span-4 flex items-end">
+              <Link
+                href="/start-a-chapter"
+                className="group inline-flex items-baseline gap-3 font-[family-name:var(--font-serif)] text-3xl italic text-[color:var(--color-bone)] underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[8px] hover:decoration-[2px]"
+              >
                 Start a chapter
-              </Button>
+                <span aria-hidden className="text-[color:var(--color-signal-tint)] transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </div>
         </Container>
