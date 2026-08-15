@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/lib/site";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  style: ["normal", "italic"],
-});
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -55,12 +48,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-[color:var(--color-bone)] text-[color:var(--color-ink)]">
+      <body className="min-h-full flex flex-col bg-[color:var(--color-ivory)] text-[color:var(--color-navy)]">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[color:var(--color-ink)] focus:px-4 focus:py-2 focus:text-[color:var(--color-bone)]"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[color:var(--color-navy)] focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to content
         </a>

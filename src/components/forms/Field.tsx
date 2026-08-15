@@ -24,22 +24,22 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
     <div className="flex flex-col gap-2.5">
       <label
         htmlFor={id}
-        className="font-[family-name:var(--font-mono)] text-[0.72rem] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink)]"
+        className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-navy)]"
       >
         {label}
         {required ? (
-          <span className="ml-1 text-[color:var(--color-signal)]" aria-hidden>
+          <span className="ml-1 text-[color:var(--color-coral)]" aria-hidden>
             *
           </span>
         ) : (
-          <span className="ml-2 font-normal normal-case tracking-normal text-[color:var(--color-stone)]">
+          <span className="ml-2 font-normal normal-case tracking-normal text-[color:var(--color-navy-3)]">
             (optional)
           </span>
         )}
       </label>
 
       {hint ? (
-        <p id={hintId} className="text-sm italic text-[color:var(--color-ink-2)]">
+        <p id={hintId} className="text-sm text-[color:var(--color-navy-3)]">
           {hint}
         </p>
       ) : null}
@@ -52,10 +52,7 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
       })}
 
       {error ? (
-        <p
-          id={errorId}
-          className="text-sm font-medium text-[color:var(--color-signal)]"
-        >
+        <p id={errorId} className="text-sm font-semibold text-[color:var(--color-coral)]">
           {error}
         </p>
       ) : null}
@@ -64,4 +61,4 @@ export function Field({ id, label, error, hint, required = false, children }: Fi
 }
 
 export const inputClass =
-  "w-full border-b border-[color:var(--color-ink)] bg-transparent px-0 py-3 text-base text-[color:var(--color-ink)] transition-colors placeholder:text-[color:var(--color-stone)] focus:border-[color:var(--color-signal)] focus:outline-none aria-[invalid=true]:border-[color:var(--color-signal)]";
+  "w-full border border-[color:var(--color-line-2)] bg-white px-4 py-3 text-base text-[color:var(--color-navy)] transition-colors placeholder:text-[color:var(--color-navy-3)] focus:border-[color:var(--color-coral)] focus:outline-none aria-[invalid=true]:border-[color:var(--color-coral)]";

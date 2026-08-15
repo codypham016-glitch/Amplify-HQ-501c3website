@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { AmplifyMark } from "@/components/brand/AmplifyMark";
+import { Button } from "@/components/ui/Button";
 import { openingQuestions, site } from "@/lib/site";
 
 /**
- * Editorial hero. The rotating italic serif question IS the identity —
- * business × psychology expressed as curiosity, not as a heading.
- * A masthead-style specimen sits on the right.
+ * Hero — big bold sans hierarchy. Curiosity question rotates below the
+ * BUSINESS × PSYCHOLOGY eyebrow.
  */
 export function Hero() {
   const [i, setI] = useState(0);
@@ -22,89 +21,75 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative bg-[color:var(--color-bone)]">
+    <section className="relative bg-[color:var(--color-ivory)]">
       <Container>
         <div className="grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-32">
-          {/* Left: editorial question */}
+          {/* Left */}
           <div className="lg:col-span-8 flex flex-col">
-            <p className="eyebrow">Amplify HQ &nbsp;·&nbsp; a student-led 501(c)(3) &nbsp;·&nbsp; launching {site.launchTerm}</p>
+            <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--color-coral)]">
+              Business × Psychology
+            </p>
 
             <h1
               key={i}
-              className="mt-10 font-[family-name:var(--font-serif)] italic text-[length:var(--text-hero)] leading-[1] tracking-[-0.02em] text-[color:var(--color-ink)] fade-up"
+              className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)] fade-up"
             >
               {openingQuestions[i]}
             </h1>
 
-            <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-ink-2)]">
-              Amplify HQ gives high schoolers a place to sit with questions like that — with professionals doing the work, businesses solving real problems, and other students who care about the same things.
+            <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+              Amplify HQ gives high school students a place to explore business, psychology, and human behavior alongside the people actually doing the work.
             </p>
 
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <Link
-                href="/chapters"
-                className="group inline-flex items-center gap-2 text-base underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[2px]"
-              >
-                Find your chapter
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
-                href="/start-a-chapter"
-                className="group inline-flex items-center gap-2 text-base underline decoration-[color:var(--color-ink)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[color:var(--color-signal)]"
-              >
-                Bring Amplify to your school
-                <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href="/about" size="lg">Explore Amplify</Button>
+              <Button href="/start-a-chapter" size="lg" variant="secondary">
+                Start a Chapter
+              </Button>
             </div>
 
-            <div
-              aria-hidden
-              className="mt-10 flex items-center gap-2"
-            >
+            <div aria-hidden className="mt-10 flex items-center gap-2">
               {openingQuestions.map((_, idx) => (
                 <span
                   key={idx}
                   className={`h-[2px] w-6 transition-colors duration-500 ${
-                    idx === i ? "bg-[color:var(--color-signal)]" : "bg-[color:var(--color-line)]"
+                    idx === i ? "bg-[color:var(--color-coral)]" : "bg-[color:var(--color-line-2)]"
                   }`}
                 />
               ))}
             </div>
           </div>
 
-          {/* Right: mark + specimen */}
+          {/* Right */}
           <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-[color:var(--color-line)] flex flex-col justify-between gap-12">
-            <div className="flex items-center justify-center h-48 bg-[color:var(--color-bone-2)] rounded-lg">
-              <AmplifyMark size={140} tone="dark" ariaHidden className="opacity-80" />
+            <div className="flex items-center justify-center h-56 bg-[color:var(--color-lavender-tint)] rounded-md">
+              <AmplifyMark size={150} tone="dark" ariaHidden />
             </div>
 
             <div>
-              <p className="font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)]">
-                The mission
-              </p>
-
-              <p className="mt-4 font-[family-name:var(--font-serif)] text-2xl leading-[1.2] text-[color:var(--color-ink)]">
-                Business is a field about numbers. It&apos;s also a field about people.
-                <span className="text-[color:var(--color-signal)]"> Amplify treats it as both.</span>
+              <p className="eyebrow">The mission</p>
+              <p className="mt-4 text-xl font-semibold leading-[1.35] text-[color:var(--color-navy)]">
+                Business is a field about numbers. It&apos;s also a field about people.{" "}
+                <span className="text-[color:var(--color-coral)]">Amplify treats it as both.</span>
               </p>
             </div>
 
             <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] pt-6 text-sm">
               <div>
                 <dt className="eyebrow">Founding</dt>
-                <dd className="mt-2 font-[family-name:var(--font-serif)] text-xl text-[color:var(--color-ink)]">4 chapters</dd>
+                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">4 chapters</dd>
               </div>
               <div>
                 <dt className="eyebrow">Location</dt>
-                <dd className="mt-2 font-[family-name:var(--font-serif)] text-xl text-[color:var(--color-ink)]">Fort Bend, TX</dd>
+                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">Fort Bend, TX</dd>
               </div>
               <div>
-                <dt className="eyebrow">Grades</dt>
-                <dd className="mt-2 font-[family-name:var(--font-serif)] text-xl text-[color:var(--color-ink)]">9 — 12</dd>
+                <dt className="eyebrow">Launch</dt>
+                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
               </div>
               <div>
                 <dt className="eyebrow">Model</dt>
-                <dd className="mt-2 font-[family-name:var(--font-serif)] text-xl text-[color:var(--color-ink)]">Student-led</dd>
+                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">Student-led</dd>
               </div>
             </dl>
           </div>

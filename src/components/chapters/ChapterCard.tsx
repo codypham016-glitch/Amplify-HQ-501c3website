@@ -7,41 +7,36 @@ type ChapterCardProps = {
   tone?: "light" | "dark";
 };
 
-/**
- * Editorial "listing" for a chapter — a serif school name over a soft
- * hairline block. No pill borders, no card shadows.
- */
 export function ChapterCard({ chapter, index, tone = "dark" }: ChapterCardProps) {
   const isDark = tone === "light";
-  const textInk = isDark ? "text-[color:var(--color-bone)]" : "text-[color:var(--color-ink)]";
-  const textMuted = isDark ? "text-[color:var(--color-bone)]/60" : "text-[color:var(--color-ink-2)]";
-  const line = isDark ? "border-[color:var(--color-bone)]/20" : "border-[color:var(--color-line)]";
-  const accent = "text-[color:var(--color-signal)]";
+  const textInk = isDark ? "text-white" : "text-[color:var(--color-navy)]";
+  const textMuted = isDark ? "text-white/60" : "text-[color:var(--color-navy-3)]";
+  const line = isDark ? "border-white/20" : "border-[color:var(--color-line)]";
 
   return (
-    <article className="flex flex-col gap-6 py-8">
+    <article className="flex flex-col gap-6 bg-white p-8 border border-[color:var(--color-line)] hover:border-[color:var(--color-coral)] transition-colors">
       <div className="flex items-center justify-between gap-4">
-        <span className={`font-[family-name:var(--font-mono)] text-[0.72rem] tracking-[0.22em] ${textMuted}`}>
+        <span className={`text-[0.72rem] font-semibold tracking-[0.14em] ${textMuted}`}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <SchoolLogo chapter={chapter} size={96} tone={tone} />
+        <SchoolLogo chapter={chapter} size={88} tone={tone} />
       </div>
 
       <div>
-        <h3 className={`font-[family-name:var(--font-serif)] text-3xl leading-[1.05] ${textInk}`}>
+        <h3 className={`text-xl font-bold leading-[1.2] ${textInk}`}>
           {chapter.school}
         </h3>
-        <p className={`mt-3 text-sm ${textMuted}`}>
+        <p className={`mt-2 text-sm ${textMuted}`}>
           {chapter.city}, {chapter.state} · {chapter.district}
         </p>
       </div>
 
       <div className={`mt-auto flex items-baseline justify-between border-t pt-4 ${line}`}>
-        <span className={`font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] ${accent}`}>
+        <span className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)]">
           Founding
         </span>
-        <span className={`font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] ${textMuted}`}>
-          Opens Fall &apos;26
+        <span className={`text-[0.68rem] font-semibold uppercase tracking-[0.14em] ${textMuted}`}>
+          Opens Fall 26
         </span>
       </div>
     </article>

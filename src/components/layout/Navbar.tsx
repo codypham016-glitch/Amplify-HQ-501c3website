@@ -31,7 +31,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ease-out ${
         scrolled
-          ? "bg-[color:var(--color-bone)]/92 backdrop-blur border-b border-[color:var(--color-line)]"
+          ? "bg-[color:var(--color-ivory)]/95 backdrop-blur border-b border-[color:var(--color-line)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -41,18 +41,18 @@ export function Navbar() {
 
           <nav
             aria-label="Primary"
-            className="hidden lg:flex items-center gap-7 text-[0.92rem] text-[color:var(--color-ink)]"
+            className="hidden lg:flex items-center gap-7 text-[0.9rem] font-medium text-[color:var(--color-navy)]"
           >
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative py-2 transition-colors hover:text-[color:var(--color-signal)]"
+                className="group relative py-2 transition-colors hover:text-[color:var(--color-coral)]"
               >
                 <span>{item.label}</span>
                 <span
                   aria-hidden
-                  className="absolute inset-x-0 -bottom-0.5 h-[1.5px] origin-left scale-x-0 bg-[color:var(--color-signal)] transition-transform duration-300 ease-out group-hover:scale-x-100"
+                  className="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-[color:var(--color-coral)] transition-transform duration-300 ease-out group-hover:scale-x-100"
                 />
               </Link>
             ))}
@@ -72,7 +72,7 @@ export function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden flex flex-col items-end gap-1.5 p-2 text-[color:var(--color-ink)]"
+              className="lg:hidden flex flex-col items-end gap-1.5 p-2 text-[color:var(--color-navy)]"
             >
               <span
                 className={`block h-px w-6 bg-current transition-all duration-300 ${
@@ -95,7 +95,7 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-[color:var(--color-bone)] border-t border-[color:var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-[color:var(--color-ivory)] border-t border-[color:var(--color-line)] overflow-y-auto">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col divide-y divide-[color:var(--color-line)]">
               {primaryNav.map((item, i) => (
@@ -105,7 +105,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="flex items-baseline justify-between py-5"
                 >
-                  <span className="font-[family-name:var(--font-serif)] text-3xl leading-none">
+                  <span className="text-2xl font-bold text-[color:var(--color-navy)]">
                     {item.label}
                   </span>
                   <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>

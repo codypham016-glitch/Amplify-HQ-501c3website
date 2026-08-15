@@ -64,10 +64,10 @@ export function ChapterLeadForm() {
         tabIndex={-1}
         className="border-l-2 border-[color:var(--color-signal)] bg-[color:var(--color-paper)] p-10"
       >
-        <p className="font-[family-name:var(--font-mono)] text-[0.72rem] uppercase tracking-[0.22em] text-[color:var(--color-signal)]">
+        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
           Received
         </p>
-        <h3 className="mt-4 font-[family-name:var(--font-serif)] text-3xl leading-[1.1] text-[color:var(--color-ink)]">
+        <h3 className="mt-4 font-bold text-3xl leading-[1.1] text-[color:var(--color-ink)]">
           Your application is in.
         </h3>
         <p className="mt-6 text-base leading-[1.65] text-[color:var(--color-ink-2)]">
@@ -86,7 +86,7 @@ export function ChapterLeadForm() {
           role="alert"
           className="border-l-2 border-[color:var(--color-signal)] bg-[color:var(--color-paper)] p-6"
         >
-          <p className="font-[family-name:var(--font-serif)] text-xl leading-[1.3] text-[color:var(--color-ink)]">
+          <p className="font-bold text-xl leading-[1.3] text-[color:var(--color-ink)]">
             {"message" in result ? result.message : "Something went wrong."}
           </p>
           <p className="mt-4 text-sm text-[color:var(--color-ink-2)]">
@@ -104,7 +104,7 @@ export function ChapterLeadForm() {
 
       {/* About you */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
+        <legend className="mb-2 font-bold text-2xl text-[color:var(--color-ink)]">
           About you
         </legend>
 
@@ -199,7 +199,7 @@ export function ChapterLeadForm() {
 
       {/* Your interest */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
+        <legend className="mb-2 font-bold text-2xl text-[color:var(--color-ink)]">
           Why Amplify HQ
         </legend>
 
@@ -240,10 +240,10 @@ export function ChapterLeadForm() {
 
       {/* Building the chapter */}
       <fieldset className="flex flex-col gap-6 border-0 p-0">
-        <legend className="mb-2 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-ink)]">
+        <legend className="mb-2 font-bold text-2xl text-[color:var(--color-ink)]">
           Building the chapter
         </legend>
-        <p className="-mt-4 text-sm italic text-[color:var(--color-ink-2)]">
+        <p className="-mt-4 text-sm text-[color:var(--color-ink-2)]">
           No experience required — these help us understand where you&apos;re starting from. Leave anything blank if it doesn&apos;t apply.
         </p>
 
@@ -299,7 +299,7 @@ export function ChapterLeadForm() {
       </fieldset>
 
       <div className="flex flex-col gap-6 border-t border-[color:var(--color-ink)] pt-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm italic text-[color:var(--color-ink-2)]">
+        <p className="text-sm text-[color:var(--color-ink-2)]">
           Fields marked <span className="text-[color:var(--color-signal)]">*</span> are required. Applications are reviewed by a person.
         </p>
         <Button type="submit" size="lg" disabled={pending} trailing={pending ? undefined : "→"}>

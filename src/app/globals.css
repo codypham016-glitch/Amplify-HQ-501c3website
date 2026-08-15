@@ -1,78 +1,94 @@
 @import "tailwindcss";
 
 /*
- * Amplify HQ — editorial design system
+ * Amplify HQ — nonprofit typography system
  *
- * The visual language is built from a serif/sans pairing that mirrors
- * the concept of the organization itself: business × psychology, systems
- * × people. Warm bone paper, ink text, vermilion accent, moss for depth.
- *
- * No pill buttons, no card grids, no gradients. Type does the work.
+ * One clean sans across the whole site (Helvetica Neue with an Inter
+ * web-font fallback). Personality comes from hierarchy, scale, and a
+ * warm ivory / deep-navy / coral palette — never from unusual fonts.
  */
 
 @theme {
-  /* ---- Editorial palette ------------------------------------------- */
-  --color-ink: #191713;
-  --color-ink-2: #4a453d;
-  --color-ink-3: #6f6759;
+  /* ---- Palette ----------------------------------------------------- */
+  --color-ivory: #f8f6f1;
+  --color-ivory-2: #f1eee5;
+  --color-ivory-3: #e8e3d3;
 
-  --color-bone: #f4efe3;
-  --color-bone-2: #ede6d3;
-  --color-cream: #e7dfc8;
-  --color-paper: #ffffff;
+  --color-navy: #17233c;
+  --color-navy-2: #2b3854;
+  --color-navy-3: #4f5c78;
+  --color-navy-4: #7b869e;
 
-  --color-signal: #c8391f;
-  --color-signal-2: #a12c15;
-  --color-signal-tint: #f1d9d1;
+  --color-coral: #f26b4f;
+  --color-coral-2: #dd5233;
+  --color-coral-tint: #fadfd6;
 
-  --color-gold: #d4af37;
-  --color-gold-2: #b8941e;
-  --color-emerald: #2d7a4a;
-  --color-emerald-2: #1f5a34;
-  --color-cobalt: #003d7a;
-  --color-cobalt-2: #002850;
+  --color-lavender: #b9a7e8;
+  --color-lavender-2: #a190d8;
+  --color-lavender-tint: #e5dbf7;
 
-  --color-moss: #2a382a;
-  --color-moss-2: #3f5040;
+  --color-periwinkle: #8299d6;
+  --color-periwinkle-2: #6a82c4;
+  --color-periwinkle-tint: #d6dff2;
 
-  --color-stone: #86796a;
-  --color-stone-2: #b7ac9a;
-  --color-line: #d9d1bd;
-  --color-line-2: #c4b99f;
-
-  /* ---- Back-compat aliases (so old references keep working) -------- */
-  --color-charcoal: var(--color-ink);
-  --color-charcoal-2: var(--color-moss);
-  --color-charcoal-3: var(--color-stone);
-  --color-teal: var(--color-signal);
-  --color-teal-dark: var(--color-signal-2);
-  --color-teal-light: var(--color-signal);
   --color-white: #ffffff;
-  --color-gray-light: var(--color-bone-2);
+  --color-line: #e5e1d6;
+  --color-line-2: #d0c9b8;
+
+  /* ---- Back-compat aliases (old class-strings keep working) -------- */
+  --color-ink: var(--color-navy);
+  --color-ink-2: var(--color-navy-2);
+  --color-ink-3: var(--color-navy-3);
+  --color-bone: var(--color-ivory);
+  --color-bone-2: var(--color-ivory-2);
+  --color-cream: var(--color-ivory-3);
+  --color-paper: #ffffff;
+  --color-signal: var(--color-coral);
+  --color-signal-2: var(--color-coral-2);
+  --color-signal-tint: var(--color-coral-tint);
+  --color-stone: var(--color-navy-3);
+  --color-stone-2: var(--color-navy-4);
+  --color-moss: var(--color-navy);
+  --color-moss-2: var(--color-navy-2);
+  --color-gold: var(--color-lavender);
+  --color-gold-2: var(--color-lavender-2);
+  --color-emerald: var(--color-periwinkle);
+  --color-emerald-2: var(--color-periwinkle-2);
+  --color-cobalt: var(--color-navy);
+  --color-cobalt-2: var(--color-navy-2);
+  --color-charcoal: var(--color-navy);
+  --color-charcoal-2: var(--color-navy-2);
+  --color-charcoal-3: var(--color-navy-3);
+  --color-teal: var(--color-coral);
+  --color-teal-dark: var(--color-coral-2);
+  --color-teal-light: var(--color-coral);
+  --color-gray-light: var(--color-ivory-2);
   --color-gray-2: var(--color-line);
-  --color-gray-muted: var(--color-stone);
-  --color-accent-warm: var(--color-signal);
-  --color-accent: var(--color-signal);
-  --color-rule-strong: var(--color-ink);
+  --color-gray-muted: var(--color-navy-3);
+  --color-accent-warm: var(--color-coral);
+  --color-accent: var(--color-coral);
+  --color-rule-strong: var(--color-navy);
 
   /* ---- Fonts ------------------------------------------------------- */
-  --font-serif: var(--font-instrument-serif);
-  --font-display: var(--font-instrument-serif);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  /* Prefer installed Helvetica Neue → then Inter (web font) → system. */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, var(--font-inter), system-ui, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, var(--font-inter), system-ui, sans-serif;
+  --font-serif: "Helvetica Neue", Helvetica, Arial, var(--font-inter), system-ui, sans-serif;
+  --font-instrument-serif: "Helvetica Neue", Helvetica, Arial, var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* ---- Type scale — editorial ------------------------------------- */
-  --text-hero: clamp(3rem, 8vw, 7.5rem);
-  --text-hero--line-height: 1;
-  --text-hero--letter-spacing: -0.015em;
+  /* ---- Type scale — hierarchy through size + weight --------------- */
+  --text-hero: clamp(2.75rem, 7vw, 6.25rem);
+  --text-hero--line-height: 1.02;
+  --text-hero--letter-spacing: -0.025em;
 
-  --text-display: clamp(2.5rem, 5.5vw, 5rem);
-  --text-display--line-height: 1.02;
-  --text-display--letter-spacing: -0.01em;
+  --text-display: clamp(2rem, 4.4vw, 3.75rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
 
-  --text-section: clamp(1.875rem, 3.2vw, 3rem);
-  --text-section--line-height: 1.08;
-  --text-section--letter-spacing: -0.01em;
+  --text-section: clamp(1.65rem, 2.8vw, 2.5rem);
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.015em;
 
   /* ---- Layout ------------------------------------------------------ */
   --container-narrow: 56rem;
@@ -84,32 +100,38 @@
 }
 
 @layer base {
-  :root {
-    color-scheme: light;
-  }
+  :root { color-scheme: light; }
 
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
+    font-family: var(--font-sans);
   }
 
   body {
-    background: var(--color-bone);
-    color: var(--color-ink);
+    background: var(--color-ivory);
+    color: var(--color-navy);
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01", "ss03";
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
+  }
+
   ::selection {
-    background: var(--color-signal);
-    color: var(--color-bone);
+    background: var(--color-coral);
+    color: var(--color-ivory);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-signal);
+    outline: 2px solid var(--color-coral);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -120,21 +142,21 @@
 /* ---- Utilities ---------------------------------------------------- */
 
 @utility eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-stone);
+  color: var(--color-navy-3);
 }
 
 @utility eyebrow-on-dark {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-signal-tint);
+  color: var(--color-coral);
 }
 
 @utility hairline {
@@ -146,23 +168,18 @@
 @utility hairline-strong {
   height: 1px;
   width: 100%;
-  background: var(--color-ink);
-}
-
-@utility serif {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  background: var(--color-navy);
 }
 
 @utility drop-cap {
   &::first-letter {
-    font-family: var(--font-serif);
-    font-size: 4.5em;
-    line-height: 0.85;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 3.5em;
+    line-height: 0.9;
     float: left;
     padding: 0.05em 0.12em 0 0;
-    color: var(--color-signal);
+    color: var(--color-coral);
   }
 }
 
@@ -176,11 +193,6 @@
 @keyframes ampRise {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes ampDraw {
-  from { stroke-dashoffset: 100%; }
-  to   { stroke-dashoffset: 0; }
 }
 
 @utility fade-up {

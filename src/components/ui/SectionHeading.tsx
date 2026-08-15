@@ -9,16 +9,16 @@ type SectionHeadingProps = {
 
 const sizeClass = {
   hero:
-    "text-[length:var(--text-hero)] leading-[1] tracking-[-0.015em]",
+    "text-[length:var(--text-hero)] leading-[1.02] tracking-[-0.025em] font-extrabold",
   display:
-    "text-[length:var(--text-display)] leading-[1.02] tracking-[-0.01em]",
+    "text-[length:var(--text-display)] leading-[1.05] tracking-[-0.02em] font-bold",
   section:
-    "text-[length:var(--text-section)] leading-[1.08] tracking-[-0.01em]",
+    "text-[length:var(--text-section)] leading-[1.1] tracking-[-0.015em] font-bold",
 };
 
 /**
- * Editorial heading. Uses the serif for a magazine-style feel; the
- * previous version was all-caps sans, which read like a marketing site.
+ * Bold sans headings. Personality comes from scale + weight, not from
+ * unusual typefaces. Sentence case by default — no caps drama.
  */
 export function SectionHeading({
   as = "h2",
@@ -27,9 +27,5 @@ export function SectionHeading({
   children,
 }: SectionHeadingProps) {
   const Tag = as;
-  return (
-    <Tag className={`font-[family-name:var(--font-serif)] font-normal ${sizeClass[size]} ${className}`}>
-      {children}
-    </Tag>
-  );
+  return <Tag className={`${sizeClass[size]} ${className}`}>{children}</Tag>;
 }

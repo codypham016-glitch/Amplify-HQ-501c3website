@@ -5,27 +5,27 @@ type Variant = "primary" | "secondary" | "ghost" | "on-dark" | "on-dark-outline"
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2.5 font-medium transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-3 whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-3 whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[color:var(--color-ink)] text-[color:var(--color-bone)] hover:bg-[color:var(--color-signal)]",
+    "bg-[color:var(--color-navy)] text-white hover:bg-[color:var(--color-coral)]",
   secondary:
-    "bg-transparent text-[color:var(--color-ink)] border border-[color:var(--color-ink)] hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-bone)]",
+    "bg-transparent text-[color:var(--color-navy)] border border-[color:var(--color-navy)] hover:bg-[color:var(--color-navy)] hover:text-white",
   ghost:
-    "bg-transparent text-[color:var(--color-ink)] hover:text-[color:var(--color-signal)]",
+    "bg-transparent text-[color:var(--color-navy)] hover:text-[color:var(--color-coral)]",
   "on-dark":
-    "bg-[color:var(--color-bone)] text-[color:var(--color-ink)] hover:bg-[color:var(--color-signal)] hover:text-[color:var(--color-bone)]",
+    "bg-[color:var(--color-coral)] text-white hover:bg-[color:var(--color-coral-2)]",
   "on-dark-outline":
-    "bg-transparent text-[color:var(--color-bone)] border border-[color:var(--color-bone)]/40 hover:border-[color:var(--color-bone)] hover:bg-[color:var(--color-bone)]/10",
+    "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/10",
   link:
-    "text-[color:var(--color-ink)] underline decoration-[color:var(--color-signal)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[color:var(--color-ink)] hover:decoration-[2px] px-0",
+    "text-[color:var(--color-navy)] underline decoration-[color:var(--color-coral)] decoration-[1.5px] underline-offset-[6px] hover:decoration-[color:var(--color-navy)] hover:decoration-[2px] px-0",
 };
 
 const sizes: Record<Size, string> = {
   sm: "px-5 py-2.5 text-sm",
-  md: "px-6 py-3 text-sm",
-  lg: "px-7 py-4 text-base",
+  md: "px-6 py-3 text-[0.95rem]",
+  lg: "px-8 py-4 text-base",
 };
 
 type CommonProps = {
