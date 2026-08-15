@@ -2,9 +2,9 @@ export const site = {
   name: "Amplify HQ",
   legalName: "Amplify HQ",
   taxStatus: "A 501(c)(3) nonprofit",
-  tagline: "Where students learn how people — and businesses — really work.",
+  tagline: "The intersection of business and psychology, built for students.",
   description:
-    "Amplify HQ is a student-led nonprofit exploring the human side of business. We give high school students a place to ask real questions about why people choose, buy, lead, and build — with professionals, businesses, and each other.",
+    "Amplify is an organization dedicated to helping students explore the intersection of business and psychology. Through guest speakers, community events, and internship and volunteer opportunities, we build a community of people curious about behavioral science, the brain, and how these fields connect to the business world.",
   concept: "Ask · Learn · Build",
   launchTerm: "Fall 2026",
   url: "https://amplifyhq.org",
@@ -329,6 +329,77 @@ export const audiences: Audience[] = [
     question: "Believe high schoolers deserve this kind of exposure?",
     cta: "Support the work",
     href: "/donate",
+  },
+];
+
+/* ---------------------------------------------------------------- *
+ * Chapter Lead responsibilities (from official Amplify docs)
+ * ---------------------------------------------------------------- */
+
+export type ChapterLeadArea = {
+  title: string;
+  actions: string[];
+};
+
+export const chapterLeadAreas: ChapterLeadArea[] = [
+  {
+    title: "Build partnerships in your community",
+    actions: [
+      "Look at the organizations in your school and neighborhood — who can you collaborate with?",
+      "Connect with local businesses to explore sponsorships or partnerships that can support your events.",
+    ],
+  },
+  {
+    title: "Grow your chapter's leadership team",
+    actions: [
+      "Identify students at your school who are passionate about behavioral science and business.",
+      "Help recruit and mentor peers to take on leadership roles at the local level.",
+    ],
+  },
+  {
+    title: "Create opportunities for your members",
+    actions: [
+      "Connect students with internship and volunteer opportunities in related fields.",
+      "Partner with local organizations to provide meaningful ways for members to apply what they learn.",
+    ],
+  },
+  {
+    title: "Organize events and speakers",
+    actions: [
+      "Reach out to professionals working at the intersection of business and psychology, and invite them to speak.",
+      "Host in-person events at places like your local library or student center.",
+      "Create community touchpoints — booths at local carnivals or farmers markets, with infographics about Amplify.",
+    ],
+  },
+];
+
+/* Real chapter roles from official Amplify structure. */
+export const chapterRoles = [
+  "1–2 Chapter Leads / Presidents",
+  "1 Vice President",
+  "1 Secretary",
+  "2 Social Media Chairs",
+  "2 Events Chairs",
+];
+
+/* Real national board roles. */
+export type NationalRole = {
+  title: string;
+  detail: string;
+};
+
+export const nationalRoles: NationalRole[] = [
+  {
+    title: "VP of Marketing",
+    detail: "Lead Amplify's branding, design, and social media presence.",
+  },
+  {
+    title: "VP of Strategy",
+    detail: "Shape Amplify's long-term vision and national initiatives.",
+  },
+  {
+    title: "VP of Outreach",
+    detail: "Build partnerships with schools, organizations, and sponsors nationwide.",
   },
 ];
 

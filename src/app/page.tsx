@@ -3,6 +3,7 @@ import { Manifesto } from "@/components/home/Manifesto";
 import { Opportunity } from "@/components/home/Opportunity";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
 import { ThePeople } from "@/components/home/ThePeople";
+import { Leadership } from "@/components/home/Leadership";
 import { BusinessXPsychology } from "@/components/home/BusinessXPsychology";
 import { TheWork } from "@/components/home/TheWork";
 import { ChaptersSection } from "@/components/home/ChaptersSection";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Opportunity />
       <WhatWeDo />
       <ThePeople />
+      <Leadership />
       <BusinessXPsychology />
       <TheWork />
       <ChaptersSection />

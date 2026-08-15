@@ -18,7 +18,7 @@ export function SchoolLogo({ chapter, size = 64, tone = "dark" }: SchoolLogoProp
   if (src) {
     return (
       <div
-        className="relative shrink-0 overflow-hidden bg-[color:var(--color-paper)]"
+        className="relative shrink-0 overflow-hidden bg-[color:var(--color-paper)] p-2 border border-[color:var(--color-line)]"
         style={{ width: size, height: size }}
       >
         <Image
@@ -26,13 +26,14 @@ export function SchoolLogo({ chapter, size = 64, tone = "dark" }: SchoolLogoProp
           alt={`${chapter.school} logo`}
           fill
           sizes={`${size}px`}
-          className="object-contain"
+          className="object-contain p-1"
         />
       </div>
     );
   }
 
-  const colorClass = tone === "light" ? "text-[color:var(--color-signal-tint)]" : "text-[color:var(--color-signal)]";
+  const colorClass =
+    tone === "light" ? "text-[color:var(--color-signal-tint)]" : "text-[color:var(--color-signal)]";
 
   return (
     <div

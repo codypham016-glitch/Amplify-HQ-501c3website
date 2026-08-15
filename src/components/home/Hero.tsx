@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { AmplifyMark } from "@/components/brand/AmplifyMark";
 import { openingQuestions, site } from "@/lib/site";
 
 /**
@@ -71,14 +72,18 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right: editorial specimen — masthead-style */}
-          <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-[color:var(--color-line)] flex flex-col justify-between gap-10">
+          {/* Right: mark + specimen */}
+          <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-[color:var(--color-line)] flex flex-col justify-between gap-12">
+            <div className="flex items-center justify-center h-48 bg-[color:var(--color-bone-2)] rounded-lg">
+              <AmplifyMark size={140} tone="dark" ariaHidden className="opacity-80" />
+            </div>
+
             <div>
               <p className="font-[family-name:var(--font-mono)] text-[0.68rem] uppercase tracking-[0.22em] text-[color:var(--color-stone)]">
-                No. 01 &nbsp;/&nbsp; The founding year
+                The mission
               </p>
 
-              <p className="mt-6 font-[family-name:var(--font-serif)] text-3xl leading-[1.15] text-[color:var(--color-ink)]">
+              <p className="mt-4 font-[family-name:var(--font-serif)] text-2xl leading-[1.2] text-[color:var(--color-ink)]">
                 Business is a field about numbers. It&apos;s also a field about people.
                 <span className="text-[color:var(--color-signal)]"> Amplify treats it as both.</span>
               </p>

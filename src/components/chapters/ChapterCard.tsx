@@ -20,11 +20,11 @@ export function ChapterCard({ chapter, index, tone = "dark" }: ChapterCardProps)
 
   return (
     <article className="flex flex-col gap-6 py-8">
-      <div className="flex items-baseline justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <span className={`font-[family-name:var(--font-mono)] text-[0.72rem] tracking-[0.22em] ${textMuted}`}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <SchoolLogo chapter={chapter} size={80} tone={tone} />
+        <SchoolLogo chapter={chapter} size={96} tone={tone} />
       </div>
 
       <div>
