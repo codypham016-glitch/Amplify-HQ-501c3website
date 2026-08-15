@@ -3,31 +3,35 @@
 import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { AmplifyMark } from "@/components/brand/AmplifyMark";
+import { SignalWaves } from "@/components/brand/SignalWaves";
 import { Button } from "@/components/ui/Button";
 import { openingQuestions, site } from "@/lib/site";
 
 /**
- * Hero — big bold sans hierarchy. Curiosity question rotates below the
- * BUSINESS × PSYCHOLOGY eyebrow.
+ * Hero — big typography anchored by the AmplifyMark. Signal waves
+ * escape the mark and become part of the environment, not a boxed logo.
  */
 export function Hero() {
   const [i, setI] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setI((n) => (n + 1) % openingQuestions.length);
-    }, 4200);
+    const id = setInterval(() => setI((n) => (n + 1) % openingQuestions.length), 4400);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section className="relative bg-[color:var(--color-ivory)]">
+    <section className="relative overflow-hidden bg-[color:var(--color-ivory)]">
+      {/* Ambient signal decoration — top-right, extending beyond the frame */}
+      <div className="pointer-events-none absolute -top-8 -right-16 opacity-70 lg:opacity-80">
+        <SignalWaves size={340} animate />
+      </div>
+
       <Container>
-        <div className="grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-32">
+        <div className="relative grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-36">
           {/* Left */}
-          <div className="lg:col-span-8 flex flex-col">
-            <p className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-[color:var(--color-coral)]">
-              Business × Psychology
+          <div className="lg:col-span-8 flex flex-col relative z-10">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-coral)]">
+              Business <span className="text-[color:var(--color-navy-3)]">×</span> Psychology
             </p>
 
             <h1
@@ -37,7 +41,7 @@ export function Hero() {
               {openingQuestions[i]}
             </h1>
 
-            <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+            <p className="mt-10 max-w-xl text-lg leading-[1.6] text-[color:var(--color-navy-2)]">
               Amplify HQ gives high school students a place to explore business, psychology, and human behavior alongside the people actually doing the work.
             </p>
 
@@ -48,11 +52,11 @@ export function Hero() {
               </Button>
             </div>
 
-            <div aria-hidden className="mt-10 flex items-center gap-2">
+            <div aria-hidden className="mt-12 flex items-center gap-2">
               {openingQuestions.map((_, idx) => (
                 <span
                   key={idx}
-                  className={`h-[2px] w-6 transition-colors duration-500 ${
+                  className={`h-[2px] w-8 transition-colors duration-500 ${
                     idx === i ? "bg-[color:var(--color-coral)]" : "bg-[color:var(--color-line-2)]"
                   }`}
                 />
@@ -60,21 +64,22 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right */}
-          <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-[color:var(--color-line)] flex flex-col justify-between gap-12">
-            <div className="flex items-center justify-center h-56 bg-[color:var(--color-lavender-tint)] rounded-md">
-              <AmplifyMark size={150} tone="dark" ariaHidden />
+          {/* Right — the AmplifyMark, unboxed */}
+          <div className="lg:col-span-4 relative flex flex-col justify-center gap-10">
+            <div className="flex items-center justify-center py-8 relative">
+              <AmplifyMark size={220} tone="dark" ariaHidden />
             </div>
 
-            <div>
-              <p className="eyebrow">The mission</p>
-              <p className="mt-4 text-xl font-semibold leading-[1.35] text-[color:var(--color-navy)]">
-                Business is a field about numbers. It&apos;s also a field about people.{" "}
-                <span className="text-[color:var(--color-coral)]">Amplify treats it as both.</span>
+            <div className="border-t border-[color:var(--color-line)] pt-6">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
+                The mission
+              </p>
+              <p className="mt-3 text-xl font-bold leading-[1.3] text-[color:var(--color-navy)]">
+                Business minds. <span className="text-[color:var(--color-coral)]">Human impact.</span>
               </p>
             </div>
 
-            <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] pt-6 text-sm">
+            <dl className="grid grid-cols-2 gap-5 text-sm">
               <div>
                 <dt className="eyebrow">Founding</dt>
                 <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">4 chapters</dd>

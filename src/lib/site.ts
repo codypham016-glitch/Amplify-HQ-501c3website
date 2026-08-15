@@ -2,7 +2,7 @@ export const site = {
   name: "Amplify HQ",
   legalName: "Amplify HQ",
   taxStatus: "A 501(c)(3) nonprofit",
-  tagline: "The intersection of business and psychology, built for students.",
+  tagline: "Business minds. Human impact.",
   description:
     "Amplify is an organization dedicated to helping students explore the intersection of business and psychology. Through guest speakers, community events, and internship and volunteer opportunities, we build a community of people curious about behavioral science, the brain, and how these fields connect to the business world.",
   concept: "Ask · Learn · Build",

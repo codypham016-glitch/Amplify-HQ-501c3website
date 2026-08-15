@@ -8,14 +8,13 @@ type WordmarkProps = {
 };
 
 /**
- * The Amplify HQ lockup — brain-signal mark + clean sans wordmark.
- * Uppercase, tight letterspacing, no serif flourish.
+ * Amplify HQ lockup — mark + "AMPLIFY" (navy) + "HQ" (coral),
+ * matching the source logo's typographic split.
  */
 export function Wordmark({ tone = "dark", size = "md", className = "" }: WordmarkProps) {
-  const inkClass = tone === "light" ? "text-white" : "text-[color:var(--color-navy)]";
-  const tagClass = tone === "light" ? "text-white/70" : "text-[color:var(--color-navy-3)]";
-  const markSize = size === "sm" ? 24 : 30;
-  const wordSize = size === "sm" ? "text-[0.95rem]" : "text-[1.1rem]";
+  const primary = tone === "light" ? "text-white" : "text-[color:var(--color-navy)]";
+  const markSize = size === "sm" ? 26 : 32;
+  const wordSize = size === "sm" ? "text-[1rem]" : "text-[1.2rem]";
 
   return (
     <Link
@@ -27,15 +26,13 @@ export function Wordmark({ tone = "dark", size = "md", className = "" }: Wordmar
         size={markSize}
         tone={tone === "light" ? "light" : "dark"}
         ariaHidden
-        className="transition-transform duration-300 group-hover:rotate-[-4deg]"
+        className="transition-transform duration-300 group-hover:rotate-[-3deg]"
       />
-      <span className={`inline-flex items-baseline gap-1.5 ${inkClass}`}>
-        <span className={`font-bold uppercase tracking-[0.06em] ${wordSize}`}>
+      <span className="inline-flex items-baseline gap-1">
+        <span className={`font-extrabold uppercase tracking-[0.02em] leading-none ${wordSize} ${primary}`}>
           Amplify
         </span>
-        <span
-          className={`font-semibold uppercase tracking-[0.14em] text-[0.72rem] ${tagClass}`}
-        >
+        <span className={`font-extrabold uppercase tracking-[0.02em] leading-none ${wordSize} text-[color:var(--color-coral)]`}>
           HQ
         </span>
       </span>

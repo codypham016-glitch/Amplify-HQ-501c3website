@@ -1,23 +1,25 @@
 import { Container } from "@/components/layout/Container";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 
 /**
- * What Amplify is — the official mission, delivered with clarity.
+ * Editorial statement of what Amplify is. Full-width, whitespace-heavy.
+ * Preserves the official mission language.
  */
 export function Manifesto() {
   return (
-    <section className="bg-white border-t border-[color:var(--color-line)] py-24 lg:py-32">
+    <section className="bg-[color:var(--color-ivory)] py-24 lg:py-32">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <SectionLabel>What Amplify is</SectionLabel>
-            <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
+              02 &nbsp;/&nbsp; What Amplify is
+            </p>
+            <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
               A community for the curious.
             </h2>
           </div>
 
           <div className="lg:col-span-7 lg:col-start-6">
-            <p className="text-2xl font-semibold leading-[1.4] text-[color:var(--color-navy)]">
+            <p className="text-[clamp(1.35rem,2.2vw,1.9rem)] font-semibold leading-[1.35] text-[color:var(--color-navy)]">
               Amplify is an organization dedicated to helping students explore the intersection of business and psychology.
             </p>
             <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
