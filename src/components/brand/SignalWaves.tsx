@@ -7,12 +7,12 @@ type SignalWavesProps = {
 };
 
 /**
- * The three signal waves — extracted from the logo as a standalone
- * motif. Tri-color by default (coral / lavender / periwinkle) to
- * match the mark. Pass `monochrome` to render all three in one color.
+ * Sound-wave / signal ripples radiating from a single point on the left.
+ * Meaning: amplification, someone speaking, ideas reaching outward.
+ * Rewritten so it reads as "voice emanating" rather than a clock face.
  */
 export function SignalWaves({
-  size = 140,
+  size = 200,
   className = "",
   ariaHidden = true,
   animate = false,
@@ -21,6 +21,10 @@ export function SignalWaves({
   const outer = monochrome ?? "#F26B4F";
   const middle = monochrome ?? "#B9A7E8";
   const inner = monochrome ?? "#8299D6";
+
+  // origin point (like a mouth speaking outward to the right)
+  const ox = 40;
+  const oy = 100;
 
   return (
     <svg
@@ -31,30 +35,42 @@ export function SignalWaves({
       className={className}
       aria-hidden={ariaHidden || undefined}
     >
-      <g fill="none" strokeLinecap="round" strokeWidth="14">
-        <path d="M 30 180 Q 130 155 175 40" stroke={outer}>
+      <g fill="none" strokeLinecap="round" strokeWidth="10">
+        {/* inner ripple */}
+        <path
+          d={`M ${ox + 22} ${oy - 22} A 30 30 0 0 1 ${ox + 22} ${oy + 22}`}
+          stroke={inner}
+        >
           {animate && (
-            <animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite" />
           )}
         </path>
-        <path d="M 30 180 Q 105 155 143 60" stroke={middle}>
+        {/* middle ripple */}
+        <path
+          d={`M ${ox + 55} ${oy - 55} A 70 70 0 0 1 ${ox + 55} ${oy + 55}`}
+          stroke={middle}
+        >
           {animate && (
             <animate
               attributeName="opacity"
-              values="0.55;0.95;0.55"
-              dur="3.2s"
-              begin="0.4s"
+              values="0.35;0.9;0.35"
+              dur="2.6s"
+              begin="0.5s"
               repeatCount="indefinite"
             />
           )}
         </path>
-        <path d="M 30 180 Q 82 155 115 80" stroke={inner}>
+        {/* outer ripple */}
+        <path
+          d={`M ${ox + 88} ${oy - 88} A 110 110 0 0 1 ${ox + 88} ${oy + 88}`}
+          stroke={outer}
+        >
           {animate && (
             <animate
               attributeName="opacity"
-              values="0.5;0.9;0.5"
-              dur="3.2s"
-              begin="0.8s"
+              values="0.3;0.85;0.3"
+              dur="2.6s"
+              begin="1s"
               repeatCount="indefinite"
             />
           )}
@@ -65,8 +81,7 @@ export function SignalWaves({
 }
 
 /**
- * Wide horizontal signal — for hero backdrops or full-width bands.
- * Tri-color, subtle opacity.
+ * Wide horizontal signal band for full-width transitions.
  */
 export function SignalBand({
   className = "",

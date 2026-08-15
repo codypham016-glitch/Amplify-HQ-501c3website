@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
+import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { ChapterGrid } from "@/components/chapters/ChapterGrid";
@@ -8,12 +9,13 @@ import { chapters, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Chapters",
   description:
-    "Amplify HQ's founding chapters — four Fort Bend ISD high schools launching Fall 2026.",
+    "Amplify HQ's founding chapters. Four Fort Bend ISD high schools launching Fall 2026.",
 };
 
 export default function ChaptersPage() {
   return (
     <>
+      <BackToHome />
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -49,7 +51,7 @@ export default function ChaptersPage() {
               </p>
             </div>
             <div className="lg:col-span-4 flex items-end">
-              <Button href="/start-a-chapter" variant="on-dark" size="lg">
+              <Button href="/start-a-chapter#apply" variant="on-dark" size="lg">
                 Apply to lead
               </Button>
             </div>

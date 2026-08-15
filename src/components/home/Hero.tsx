@@ -1,44 +1,29 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { AmplifyMark } from "@/components/brand/AmplifyMark";
 import { SignalWaves } from "@/components/brand/SignalWaves";
 import { Button } from "@/components/ui/Button";
-import { openingQuestions, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 /**
- * Hero — big typography anchored by the AmplifyMark. Signal waves
- * escape the mark and become part of the environment, not a boxed logo.
+ * Hero. One clear question, AmplifyMark on the right. Signal ripples
+ * radiate outward like sound waves (not clock hands).
  */
 export function Hero() {
-  const [i, setI] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setI((n) => (n + 1) % openingQuestions.length), 4400);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section className="relative overflow-hidden bg-[color:var(--color-ivory)]">
-      {/* Ambient signal decoration — top-right, extending beyond the frame */}
-      <div className="pointer-events-none absolute -top-8 -right-16 opacity-70 lg:opacity-80">
-        <SignalWaves size={340} animate />
+      <div className="pointer-events-none absolute top-6 right-0 opacity-70 lg:opacity-80">
+        <SignalWaves size={300} animate />
       </div>
 
       <Container>
-        <div className="relative grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-36">
-          {/* Left */}
+        <div className="relative grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-32">
           <div className="lg:col-span-8 flex flex-col relative z-10">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-coral)]">
               Business <span className="text-[color:var(--color-navy-3)]">×</span> Psychology
             </p>
 
-            <h1
-              key={i}
-              className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)] fade-up"
-            >
-              {openingQuestions[i]}
+            <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
+              What makes people choose?
             </h1>
 
             <p className="mt-10 max-w-xl text-lg leading-[1.6] text-[color:var(--color-navy-2)]">
@@ -47,26 +32,14 @@ export function Hero() {
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Button href="/about" size="lg">Explore Amplify</Button>
-              <Button href="/start-a-chapter" size="lg" variant="secondary">
+              <Button href="/start-a-chapter#apply" size="lg" variant="secondary">
                 Start a Chapter
               </Button>
             </div>
-
-            <div aria-hidden className="mt-12 flex items-center gap-2">
-              {openingQuestions.map((_, idx) => (
-                <span
-                  key={idx}
-                  className={`h-[2px] w-8 transition-colors duration-500 ${
-                    idx === i ? "bg-[color:var(--color-coral)]" : "bg-[color:var(--color-line-2)]"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
-          {/* Right — the AmplifyMark, unboxed */}
           <div className="lg:col-span-4 relative flex flex-col justify-center gap-10">
-            <div className="flex items-center justify-center py-8 relative">
+            <div className="flex items-center justify-center py-8">
               <AmplifyMark size={220} tone="dark" ariaHidden />
             </div>
 

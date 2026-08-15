@@ -23,7 +23,12 @@ export const primaryNav: NavItem[] = [
   { label: "Team", href: "/team" },
   { label: "Start a Chapter", href: "/start-a-chapter" },
   { label: "Partners", href: "/partners" },
-  { label: "Blog", href: "/blog" },
+];
+
+/* Utility links shown in the top bar above the main nav. */
+export const utilityNav: NavItem[] = [
+  { label: "Contact", href: "/contact" },
+  { label: "Donate", href: "/donate" },
 ];
 
 export const footerNav: { heading: string; items: NavItem[] }[] = [
@@ -151,7 +156,7 @@ export const programCalendar: Semester[] = [
         months: "October",
         title: "Why people buy",
         detail:
-          "A workshop on consumer psychology — how attention, framing, and small design choices shape what people pick.",
+          "A workshop on consumer psychology. How attention, framing, and small design choices shape what people pick.",
         kind: "workshop",
       },
       {
@@ -165,7 +170,7 @@ export const programCalendar: Semester[] = [
         months: "December",
         title: "A conversation with someone doing the work",
         detail:
-          "A guest from business, psychology, or somewhere in between — and time for the questions students actually want to ask.",
+          "A guest from business, psychology, or somewhere in between, plus time for the questions students actually want to ask.",
         kind: "speaker",
       },
     ],
@@ -177,7 +182,7 @@ export const programCalendar: Semester[] = [
         months: "January",
         title: "How people actually decide",
         detail:
-          "Behavioral economics — biases, incentives, and why textbook rationality misses how choices really get made.",
+          "Behavioral economics. Biases, incentives, and why textbook rationality misses how choices really get made.",
         kind: "workshop",
       },
       {
@@ -191,7 +196,7 @@ export const programCalendar: Semester[] = [
         months: "March",
         title: "Building an argument that lands",
         detail:
-          "Consulting fundamentals — structuring a case, building a deck, presenting to a room that pushes back.",
+          "Consulting fundamentals. Structuring a case, building a deck, presenting to a room that pushes back.",
         kind: "workshop",
       },
       {
@@ -229,7 +234,7 @@ export const pillars: Pillar[] = [
     title: "Connect",
     lede: "Real conversations with the people doing the work.",
     detail:
-      "Founders, marketers, researchers, and consultants — in rooms small enough that a student can ask a real question and get a real answer.",
+      "Founders, marketers, researchers, and consultants, in rooms small enough that a student can ask a real question and get a real answer.",
   },
   {
     index: "03",
@@ -346,7 +351,7 @@ export const chapterLeadAreas: ChapterLeadArea[] = [
   {
     title: "Build partnerships in your community",
     actions: [
-      "Look at the organizations in your school and neighborhood — who can you collaborate with?",
+      "Look at the organizations in your school and neighborhood. Who can you collaborate with?",
       "Connect with local businesses to explore sponsorships or partnerships that can support your events.",
     ],
   },
@@ -369,7 +374,7 @@ export const chapterLeadAreas: ChapterLeadArea[] = [
     actions: [
       "Reach out to professionals working at the intersection of business and psychology, and invite them to speak.",
       "Host in-person events at places like your local library or student center.",
-      "Create community touchpoints — booths at local carnivals or farmers markets, with infographics about Amplify.",
+      "Create community touchpoints like booths at local carnivals or farmers markets, with infographics about Amplify.",
     ],
   },
 ];
@@ -420,7 +425,7 @@ export const partnerPathways: PartnerPathway[] = [
     index: "01",
     title: "Speak to a chapter",
     detail:
-      "Tell students what your work actually looks like — the path in, the parts nobody warns you about, what you wish someone had told you.",
+      "Tell students what your work actually looks like. The path in, the parts nobody warns you about, what you wish someone had told you.",
     commitment: "One hour, once",
   },
   {
@@ -434,7 +439,7 @@ export const partnerPathways: PartnerPathway[] = [
     index: "03",
     title: "Host a consulting project",
     detail:
-      "Hand a chapter team a real problem — a market question, a positioning challenge, a customer you don't understand yet.",
+      "Hand a chapter team a real problem. A market question, a positioning challenge, a customer you don't understand yet.",
     commitment: "A few hours across a term",
   },
   {

@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Meet the team",
   description:
-    "The people building Amplify HQ — a student-led nonprofit exploring the intersection of business and psychology.",
+    "The people building Amplify HQ. A student-led nonprofit exploring the intersection of business and psychology.",
 };
 
 type TeamMember = {
@@ -31,6 +30,7 @@ const team: TeamMember[] = [
 export default function TeamPage() {
   return (
     <>
+      <BackToHome />
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -86,38 +86,18 @@ export default function TeamPage() {
 
       <section className="py-24 lg:py-32">
         <Container>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <SectionLabel>Join the team</SectionLabel>
-              <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                More leadership coming — including yours.
-              </h2>
-              <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                As chapters launch, more team members and board roles will be introduced. If you&apos;re a student ready to lead — locally or nationally — this is the time.
-              </p>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Button href="/start-a-chapter" size="lg">
-                  Apply to lead a chapter
-                </Button>
-                <Link
-                  href={`mailto:${site.contactEmail}`}
-                  className="inline-flex items-center gap-2 py-4 px-2 text-base font-semibold underline decoration-[color:var(--color-coral)] decoration-[2px] underline-offset-[6px] hover:decoration-[3px]"
-                >
-                  Email us <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 lg:col-start-9 lg:pl-8 lg:border-l lg:border-[color:var(--color-line)]">
-              <p className="eyebrow">Also open</p>
-              <ul className="mt-6 space-y-4 text-lg font-semibold text-[color:var(--color-navy)]">
-                <li>VP of Marketing</li>
-                <li>VP of Strategy</li>
-                <li>VP of Outreach</li>
-              </ul>
-              <p className="mt-6 text-sm text-[color:var(--color-navy-3)]">
-                National board roles for Chapter Leads ready to take on more.
-              </p>
+          <div className="max-w-2xl">
+            <SectionLabel>Join the team</SectionLabel>
+            <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
+              More leadership coming.
+            </h2>
+            <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+              As chapters launch, more team members will be introduced. If you&apos;re a student ready to lead, this is the time.
+            </p>
+            <div className="mt-10">
+              <Button href="/start-a-chapter#apply" size="lg">
+                Apply to lead a chapter
+              </Button>
             </div>
           </div>
         </Container>

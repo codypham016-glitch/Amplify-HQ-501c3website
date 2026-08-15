@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { partnerPathways, partnerCategories, site } from "@/lib/site";
+import { partnerPathways, partnerCategories } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -14,16 +14,55 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
+      <BackToHome />
+
+      {/* Who we work with — moved to the top */}
+      <section className="bg-[color:var(--color-navy)] py-24 text-white lg:py-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionLabel tone="dark">Who we work with</SectionLabel>
+              <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-white">
+                We&apos;re building the first partner cohort now.
+              </h1>
+              <p className="mt-8 max-w-md text-lg leading-[1.65] text-white/75">
+                No invented logos. No fabricated partner rosters. If your organization fits below, we&apos;d like to talk.
+              </p>
+              <div className="mt-10">
+                <Button href="/contact" variant="on-dark" size="lg">
+                  Get in touch
+                </Button>
+              </div>
+            </div>
+
+            <ul className="lg:col-span-6 lg:col-start-7 divide-y divide-white/15 border-y border-white/15">
+              {partnerCategories.map((c, i) => (
+                <li key={c.label} className="grid grid-cols-12 items-baseline gap-4 py-6">
+                  <span className="col-span-1 text-[0.72rem] font-semibold tracking-[0.14em] text-white/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="col-span-11">
+                    <h3 className="text-xl font-bold text-white">{c.label}</h3>
+                    <p className="mt-2 text-sm text-white/70">{c.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      {/* Why partner with Amplify */}
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <SectionLabel>Partners</SectionLabel>
-              <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Give a student a real audience.
-              </h1>
-              <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Amplify HQ launches in {site.launchTerm}. Most partnerships start small — one hour in front of a chapter — and grow from there. There&apos;s no committee to join. No form to fill in triplicate. Just a conversation.
+              <SectionLabel>Why partner with us</SectionLabel>
+              <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
+                Give a student their first real audience.
+              </h2>
+              <p className="mt-10 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+                Amplify HQ&apos;s goal is to help high school students explore the intersection of business and psychology through the people actually doing the work. We partner with organizations who want to invest in the next generation of curious, ambitious young leaders. Whether that&apos;s an hour on a chapter call, a real case for a student team, or an internship inside your organization, the value goes both ways.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/contact" size="lg">Start a conversation</Button>
@@ -34,6 +73,7 @@ export default function PartnersPage() {
         </Container>
       </section>
 
+      {/* Four ways in */}
       <section className="bg-white border-y border-[color:var(--color-line)] py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
@@ -73,42 +113,6 @@ export default function PartnersPage() {
               </li>
             ))}
           </ol>
-        </Container>
-      </section>
-
-      <section className="bg-[color:var(--color-navy)] py-24 text-white lg:py-28">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <SectionLabel tone="dark">Who we work with</SectionLabel>
-              <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-white">
-                We&apos;re building the first partner cohort now.
-              </h2>
-              <p className="mt-8 max-w-md text-lg leading-[1.65] text-white/75">
-                No invented logos. No fabricated partner rosters. If your organization fits below, we&apos;d like to talk.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-10 inline-flex items-center gap-2 text-lg font-semibold text-white underline decoration-[color:var(--color-coral)] decoration-[2px] underline-offset-[6px] hover:decoration-[3px]"
-              >
-                Get in touch <span aria-hidden>→</span>
-              </Link>
-            </div>
-
-            <ul className="lg:col-span-6 lg:col-start-7 divide-y divide-white/15 border-y border-white/15">
-              {partnerCategories.map((c, i) => (
-                <li key={c.label} className="grid grid-cols-12 items-baseline gap-4 py-6">
-                  <span className="col-span-1 text-[0.72rem] font-semibold tracking-[0.14em] text-white/50">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="col-span-11">
-                    <h3 className="text-xl font-bold text-white">{c.label}</h3>
-                    <p className="mt-2 text-sm text-white/70">{c.note}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
         </Container>
       </section>
     </>

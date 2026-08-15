@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
+import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { ProgramCalendar } from "@/components/home/ProgramCalendar";
@@ -8,12 +9,13 @@ import { pillars, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "The Amplify HQ chapter year — monthly workshops in consumer psychology, marketing, and behavioral economics, plus speakers, a case competition, and a member showcase.",
+    "The Amplify HQ chapter year. Monthly workshops in consumer psychology, marketing, and behavioral economics, plus speakers, a case competition, and a member showcase.",
 };
 
 export default function ProgramsPage() {
   return (
     <>
+      <BackToHome />
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -24,7 +26,7 @@ export default function ProgramsPage() {
               </h1>
             </div>
             <p className="lg:col-span-7 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Chapters meet once a month across two semesters. Every meeting is a workshop, a conversation, or a project — never a lecture nobody asked for.
+              Chapters meet once a month across two semesters. Every meeting is a workshop, a conversation, or a project. Never a lecture nobody asked for.
             </p>
           </div>
 
@@ -69,7 +71,7 @@ export default function ProgramsPage() {
               </p>
             </div>
             <div className="lg:col-span-4 flex items-end">
-              <Button href="/start-a-chapter" variant="on-dark" size="lg">
+              <Button href="/start-a-chapter#apply" variant="on-dark" size="lg">
                 Start a chapter
               </Button>
             </div>

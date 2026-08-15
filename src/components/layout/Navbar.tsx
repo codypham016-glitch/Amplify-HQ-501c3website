@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { Wordmark } from "./Wordmark";
 import { Button } from "@/components/ui/Button";
-import { primaryNav } from "@/lib/site";
+import { primaryNav, utilityNav } from "@/lib/site";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -32,9 +32,30 @@ export function Navbar() {
       className={`sticky top-0 z-40 transition-all duration-300 ease-out ${
         scrolled
           ? "bg-[color:var(--color-ivory)]/95 backdrop-blur border-b border-[color:var(--color-line)]"
-          : "bg-transparent border-b border-transparent"
+          : "bg-[color:var(--color-ivory)] border-b border-transparent"
       }`}
     >
+      {/* Utility strip — Contact + Donate */}
+      <div className="border-b border-[color:var(--color-line)]/60 bg-[color:var(--color-navy)] text-white">
+        <Container>
+          <div className="flex h-9 items-center justify-end gap-6 text-[0.75rem] font-medium">
+            {utilityNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`transition-colors ${
+                  item.label === "Donate"
+                    ? "font-semibold text-[color:var(--color-coral)] hover:text-white"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </div>
+
       <Container>
         <div className="flex h-16 items-center justify-between gap-6 lg:h-20">
           <Wordmark size="md" />
@@ -60,7 +81,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-3">
             <Button
-              href="/start-a-chapter"
+              href="/start-a-chapter#apply"
               variant="primary"
               size="sm"
               className="hidden sm:inline-flex"
@@ -95,7 +116,7 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-[color:var(--color-ivory)] border-t border-[color:var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[6.25rem] bottom-0 z-30 bg-[color:var(--color-ivory)] border-t border-[color:var(--color-line)] overflow-y-auto">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col divide-y divide-[color:var(--color-line)]">
               {primaryNav.map((item, i) => (
@@ -111,9 +132,24 @@ export function Navbar() {
                   <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               ))}
+              {utilityNav.map((item, i) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-baseline justify-between py-5"
+                >
+                  <span className="text-2xl font-bold text-[color:var(--color-navy)]">
+                    {item.label}
+                  </span>
+                  <span className="eyebrow">
+                    {String(primaryNav.length + i + 1).padStart(2, "0")}
+                  </span>
+                </Link>
+              ))}
               <div className="pt-6 pb-10">
                 <Button
-                  href="/start-a-chapter"
+                  href="/start-a-chapter#apply"
                   variant="primary"
                   size="lg"
                   className="w-full justify-between"

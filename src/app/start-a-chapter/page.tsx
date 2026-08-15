@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Button } from "@/components/ui/Button";
 import { ChapterLeadForm } from "@/components/forms/ChapterLeadForm";
-import { site, chapterLeadAreas, chapterRoles, nationalRoles } from "@/lib/site";
+import { site, chapterLeadAreas, chapterRoles } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Start a Chapter",
   description:
-    "Bring Amplify HQ to your high school. Apply to become a Chapter Lead — no prior business experience required.",
+    "Bring Amplify HQ to your high school. Apply to become a Chapter Lead. No prior business experience required.",
 };
 
 const onboardingSteps = [
@@ -19,7 +22,7 @@ const onboardingSteps = [
   {
     index: "02",
     title: "Introductory call",
-    detail: "A short call with Amplify leadership — a conversation, not an interview.",
+    detail: "A short call with Amplify leadership. A conversation, not an interview.",
   },
   {
     index: "03",
@@ -34,7 +37,8 @@ const onboardingSteps = [
   {
     index: "05",
     title: "Build your local board",
-    detail: "Recruit 1–2 Chapter Leads, 1 VP, 1 Secretary, 2 Social Media Chairs, and 2 Events Chairs.",
+    detail:
+      "Recruit 1 to 2 Chapter Leads, 1 VP, 1 Secretary, 2 Social Media Chairs, and 2 Events Chairs.",
   },
   {
     index: "06",
@@ -51,16 +55,43 @@ const onboardingSteps = [
 export default function StartAChapterPage() {
   return (
     <>
+      <BackToHome />
+
+      {/* Big prominent apply CTA at the top */}
+      <section className="bg-[color:var(--color-coral)] py-14 text-white lg:py-16">
+        <Container>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-white/85">
+                Ready right now?
+              </p>
+              <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
+                Bring Amplify to your school.
+              </h2>
+              <p className="mt-4 text-base text-white/90 lg:text-lg">
+                Skip the details. Click below to apply.
+              </p>
+            </div>
+            <Link
+              href="#apply"
+              className="inline-flex items-center justify-center gap-3 bg-white px-10 py-5 text-lg font-extrabold uppercase tracking-[0.06em] text-[color:var(--color-coral)] shadow-lg transition-transform hover:-translate-y-0.5"
+            >
+              Click here to apply <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <SectionLabel>Start a chapter</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Bring Amplify to your school.
+                What being a Chapter Lead looks like.
               </h1>
               <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience — the national team provides the program, the materials, and the support. You bring your school.
+                Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience. The national team provides the program, the materials, and the support. You bring your school.
               </p>
             </div>
 
@@ -91,7 +122,7 @@ export default function StartAChapterPage() {
                 Four areas of impact.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Chapter Leads shape their community around four core responsibilities — the actual work of building a chapter that lasts.
+                Chapter Leads shape their community around four core responsibilities. The actual work of building a chapter that lasts.
               </p>
             </div>
 
@@ -133,7 +164,7 @@ export default function StartAChapterPage() {
                 Who runs a chapter.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                You&apos;ll recruit these roles from your own campus — students passionate about behavioral science and business, ready to build something new.
+                You&apos;ll recruit these roles from your own campus. Students passionate about behavioral science and business, ready to build something new.
               </p>
             </div>
 
@@ -158,7 +189,7 @@ export default function StartAChapterPage() {
 
       <section className="bg-[color:var(--color-navy)] py-24 text-white lg:py-28">
         <Container>
-          <SectionLabel tone="dark">Onboarding — the seven steps</SectionLabel>
+          <SectionLabel tone="dark">Onboarding, in seven steps</SectionLabel>
           <ol className="mt-12 grid grid-cols-1 gap-x-10 gap-y-0 md:grid-cols-2 lg:grid-cols-3">
             {onboardingSteps.map((s) => (
               <li
@@ -174,42 +205,7 @@ export default function StartAChapterPage() {
         </Container>
       </section>
 
-      <section className="bg-[color:var(--color-lavender-tint)] py-24 lg:py-28">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <SectionLabel>Beyond your chapter</SectionLabel>
-              <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                National board roles.
-              </h2>
-              <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Chapter Leads with the appetite for more can take on a national role — shaping Amplify&apos;s direction across all chapters. Excellent for college admissions and real leadership experience.
-              </p>
-            </div>
-
-            <ul className="lg:col-span-6 lg:col-start-7 flex flex-col gap-6">
-              {nationalRoles.map((r) => (
-                <li
-                  key={r.title}
-                  className="border-l-2 border-[color:var(--color-coral)] bg-white p-8"
-                >
-                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
-                    Board role
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold leading-[1.2] text-[color:var(--color-navy)]">
-                    {r.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-[1.6] text-[color:var(--color-navy-2)]">
-                    {r.detail}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
-
-      <section id="apply" className="bg-[color:var(--color-ivory-2)] py-24 lg:py-32">
+      <section id="apply" className="bg-[color:var(--color-ivory-2)] py-24 lg:py-32 scroll-mt-24">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -218,16 +214,7 @@ export default function StartAChapterPage() {
                 Read by a person. Answered by one.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Submitting doesn&apos;t commit you to anything — the next step is a conversation.
-              </p>
-              <p className="mt-6 text-sm text-[color:var(--color-navy-2)]">
-                Questions first? Email{" "}
-                <a
-                  href={`mailto:${site.contactEmail}`}
-                  className="font-semibold text-[color:var(--color-navy)] underline decoration-[color:var(--color-coral)] underline-offset-4"
-                >
-                  {site.contactEmail}
-                </a>
+                Submitting doesn&apos;t commit you to anything. The next step is a conversation.
               </p>
             </div>
 

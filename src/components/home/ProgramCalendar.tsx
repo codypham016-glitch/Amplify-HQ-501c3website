@@ -1,6 +1,5 @@
 import { Container } from "@/components/layout/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Button } from "@/components/ui/Button";
 import { programCalendar } from "@/lib/site";
 
 const kindLabel: Record<string, string> = {
@@ -66,13 +65,10 @@ export function ProgramCalendar() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-t border-[color:var(--color-navy)] pt-8">
+        <div className="mt-14 border-t border-[color:var(--color-navy)] pt-8">
           <p className="max-w-xl text-lg font-semibold text-[color:var(--color-navy-2)]">
             Chapters set their own dates within each month.
           </p>
-          <Button href="/programs" variant="link">
-            See full programs →
-          </Button>
         </div>
       </Container>
     </section>
