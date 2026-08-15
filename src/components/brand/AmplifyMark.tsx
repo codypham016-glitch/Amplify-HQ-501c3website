@@ -6,12 +6,15 @@ type AmplifyMarkProps = {
 };
 
 /**
- * The Amplify HQ mark — head silhouette in navy, brain with a mixed
- * network of coral/lavender/periwinkle nodes, and three signal waves
- * in the same three accent colors radiating out.
+ * The Amplify HQ mark.
+ * Head silhouette in profile facing LEFT with the crown cut away to
+ * reveal the brain (like an anatomical cross-section). Signal waves
+ * float above and to the right of the head, coral / lavender /
+ * periwinkle, opening outward — matches the real logo composition.
  *
- * This is the source of truth for the visual language: the signal waves
- * and the neural network graphics on the site are extracted from this.
+ * When public/amplify-logo.png exists, prefer <BrandLogo> over this
+ * hand-drawn SVG for anywhere the real logo should be shown at
+ * scale.
  */
 export function AmplifyMark({
   size = 40,
@@ -19,9 +22,7 @@ export function AmplifyMark({
   className = "",
   ariaHidden = false,
 }: AmplifyMarkProps) {
-  // Head silhouette color
-  const head =
-    tone === "light" ? "#ffffff" : tone === "signal" ? "#F26B4F" : "#17233C";
+  const head = tone === "light" ? "#ffffff" : "#17233C";
   const brainBg = tone === "light" ? "#17233C" : "#ffffff";
   const line = tone === "light" ? "#ffffff" : "#17233C";
 
@@ -33,73 +34,80 @@ export function AmplifyMark({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 220 220"
+      viewBox="0 0 260 240"
       width={size}
       height={size}
       className={`shrink-0 ${className}`}
       aria-hidden={ariaHidden || undefined}
     >
-      {/* Head silhouette in profile */}
+      {/* Head silhouette facing LEFT — bald crown, distinguishable
+          forehead, nose bump, mouth curl, and chin. */}
       <path
-        d="M62 208
-           L62 192
-           L48 192
-           L48 128
-           C48 82 76 50 118 46
-           C160 42 184 72 188 106
-           L192 128
-           L200 132
-           L200 148
-           L188 156
-           L192 172
-           L182 184
-           L166 184
-           L156 192
-           L88 192
-           L88 208 Z"
+        d="M 168 218
+           L 168 202
+           L 174 202
+           L 176 152
+           C 176 96 140 68 100 68
+           C 78 68 66 78 60 90
+           L 52 100
+           C 46 102 42 108 42 116
+           C 42 124 48 128 54 128
+           L 58 128
+           L 62 136
+           L 66 140
+           C 66 146 64 150 60 154
+           L 66 158
+           L 72 156
+           C 74 162 70 168 66 172
+           L 74 178
+           C 82 184 86 190 86 196
+           L 86 202
+           L 100 202
+           L 100 218 Z"
         fill={head}
       />
 
-      {/* Brain "chamber" — a soft interior area */}
+      {/* Cutaway crown — a lighter interior "bowl" showing the brain */}
       <path
-        d="M70 122
-           C 70 92 92 68 122 66
-           C 156 64 174 90 176 118
-           C 176 138 168 156 148 168
-           L 96 168
-           C 78 158 70 142 70 122 Z"
+        d="M 68 100
+           C 74 84 92 76 112 78
+           C 148 82 168 108 168 138
+           L 168 152
+           L 74 152
+           C 60 138 58 118 68 100 Z"
         fill={brainBg}
-        opacity="0.9"
       />
 
-      {/* Curved connecting lines inside brain */}
+      {/* Curved neural connections */}
       <g fill="none" stroke={line} strokeWidth="1.5" opacity="0.75" strokeLinecap="round">
-        <path d="M 82 108 Q 100 92 120 108" />
-        <path d="M 120 108 Q 140 120 158 100" />
-        <path d="M 82 130 Q 100 120 118 132" />
-        <path d="M 118 132 Q 140 148 162 130" />
-        <path d="M 96 150 Q 118 140 138 152" />
-        <path d="M 82 108 L 82 130" />
-        <path d="M 158 100 L 162 130" />
+        <path d="M 82 108 Q 100 96 118 106" />
+        <path d="M 118 106 Q 138 116 152 100" />
+        <path d="M 82 128 Q 100 122 118 130" />
+        <path d="M 118 130 Q 140 138 156 122" />
+        <path d="M 90 144 Q 108 140 128 146" />
+        <path d="M 82 108 L 82 128" />
+        <path d="M 152 100 L 156 122" />
       </g>
 
-      {/* Neural nodes — mixed colors matching the real logo */}
+      {/* Neural nodes — mixed-color dots */}
       <g>
-        <circle cx="82" cy="108" r="4.5" fill={coral} />
-        <circle cx="120" cy="108" r="4.5" fill={navy} />
-        <circle cx="158" cy="100" r="4" fill={lavender} />
-        <circle cx="82" cy="130" r="4" fill={periwinkle} />
-        <circle cx="118" cy="132" r="4.5" fill={coral} />
-        <circle cx="162" cy="130" r="4" fill={navy} />
-        <circle cx="96" cy="150" r="3.5" fill={lavender} />
-        <circle cx="138" cy="152" r="4" fill={periwinkle} />
+        <circle cx="82" cy="108" r="4" fill={coral} />
+        <circle cx="118" cy="106" r="4" fill={navy} />
+        <circle cx="152" cy="100" r="3.5" fill={lavender} />
+        <circle cx="82" cy="128" r="3.5" fill={periwinkle} />
+        <circle cx="118" cy="130" r="4" fill={coral} />
+        <circle cx="156" cy="122" r="3.5" fill={navy} />
+        <circle cx="90" cy="144" r="3" fill={lavender} />
+        <circle cx="128" cy="146" r="3.5" fill={periwinkle} />
       </g>
 
-      {/* Three signal waves — tri-color, matching the real logo */}
-      <g fill="none" strokeLinecap="round" strokeWidth="12">
-        <path d="M 138 34 Q 190 26 210 74" stroke={coral} />
-        <path d="M 128 46 Q 172 40 196 82" stroke={lavender} />
-        <path d="M 118 58 Q 156 54 180 90" stroke={periwinkle} />
+      {/* Signal waves — three nested arcs above and to the right of
+          the head, opening downward. Matches the reference logo
+          composition (broadcast emanating from a mind). */}
+      <g fill="none" strokeLinecap="round" strokeWidth="11">
+        <path d="M 178 60 A 30 30 0 0 1 208 90" stroke={periwinkle} />
+        <path d="M 176 42 A 60 60 0 0 1 236 102" stroke={lavender} />
+        <path d="M 176 24 A 92 92 0 0 1 268 116" stroke={coral} />
       </g>
     </svg>
   );

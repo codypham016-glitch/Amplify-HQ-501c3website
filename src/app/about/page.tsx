@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -12,10 +13,27 @@ export const metadata: Metadata = {
     "About Amplify HQ. A 501(c)(3) nonprofit helping high school students explore the intersection of business and psychology.",
 };
 
+type BoardMember = {
+  name: string;
+  role: string;
+  bio: string;
+  photo: string;
+};
+
+const board: BoardMember[] = [
+  {
+    name: "Hector Pham",
+    role: "COO & Board Member",
+    photo: "/team/hector.webp",
+    bio: "Founding leader bringing Amplify HQ from New York to Texas. Driving the organization's expansion across founding chapters and shaping the operational vision.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
       <BackToHome />
+
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
@@ -47,7 +65,54 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Board members */}
       <section className="bg-white border-y border-[color:var(--color-line)] py-24 lg:py-32">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionLabel>Board members</SectionLabel>
+              <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
+                The people building Amplify.
+              </h2>
+              <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+                Amplify HQ is student-led. The board members below are the national leadership growing this from the ground up.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7 space-y-16">
+              {board.map((m) => (
+                <article key={m.name} className="grid grid-cols-1 gap-8 sm:grid-cols-12 sm:gap-10">
+                  <div className="sm:col-span-5">
+                    <div className="relative aspect-[4/5] w-full max-w-xs bg-[color:var(--color-ivory-2)] overflow-hidden border border-[color:var(--color-line)]">
+                      <Image
+                        src={m.photo}
+                        alt={m.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-7 flex flex-col justify-center">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)]">
+                      {m.role}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-bold leading-[1.2] text-[color:var(--color-navy)]">
+                      {m.name}
+                    </h3>
+                    <p className="mt-5 text-base leading-[1.65] text-[color:var(--color-navy-2)]">
+                      {m.bio}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Founding chapters */}
+      <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -65,7 +130,7 @@ export default function AboutPage() {
             {chapters.map((c, i) => (
               <li
                 key={c.slug}
-                className="bg-[color:var(--color-ivory)] p-8 border border-[color:var(--color-line)] hover:border-[color:var(--color-coral)] transition-colors"
+                className="bg-white p-8 border border-[color:var(--color-line)] hover:border-[color:var(--color-coral)] transition-colors"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[0.72rem] font-semibold tracking-[0.14em] text-[color:var(--color-navy-3)]">

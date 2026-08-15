@@ -1,23 +1,20 @@
 import { Container } from "@/components/layout/Container";
 import { AmplifyMark } from "@/components/brand/AmplifyMark";
-import { SignalWaves } from "@/components/brand/SignalWaves";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/lib/site";
 
 /**
- * Hero. One clear question, AmplifyMark on the right. Signal ripples
- * radiate outward like sound waves (not clock hands).
+ * Hero. Two clean columns: big question on the left, the AmplifyMark
+ * on the right with room to breathe. Metrics moved to a full-width
+ * strip below so the top doesn't feel clumped.
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[color:var(--color-ivory)]">
-      <div className="pointer-events-none absolute top-6 right-0 opacity-70 lg:opacity-80">
-        <SignalWaves size={300} animate />
-      </div>
-
+    <section className="bg-[color:var(--color-ivory)]">
       <Container>
-        <div className="relative grid grid-cols-1 gap-12 pt-16 pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-32">
-          <div className="lg:col-span-8 flex flex-col relative z-10">
+        <div className="grid grid-cols-1 gap-16 pt-16 pb-20 lg:grid-cols-12 lg:gap-12 lg:pt-24 lg:pb-24">
+          {/* Left: content */}
+          <div className="lg:col-span-7 flex flex-col">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-coral)]">
               Business <span className="text-[color:var(--color-navy-3)]">×</span> Psychology
             </p>
@@ -38,40 +35,31 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 relative flex flex-col justify-center gap-10">
-            <div className="flex items-center justify-center py-8">
-              <AmplifyMark size={220} tone="dark" ariaHidden />
-            </div>
-
-            <div className="border-t border-[color:var(--color-line)] pt-6">
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
-                The mission
-              </p>
-              <p className="mt-3 text-xl font-bold leading-[1.3] text-[color:var(--color-navy)]">
-                Business minds. <span className="text-[color:var(--color-coral)]">Human impact.</span>
-              </p>
-            </div>
-
-            <dl className="grid grid-cols-2 gap-5 text-sm">
-              <div>
-                <dt className="eyebrow">Founding</dt>
-                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">4 chapters</dd>
-              </div>
-              <div>
-                <dt className="eyebrow">Location</dt>
-                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">Fort Bend, TX</dd>
-              </div>
-              <div>
-                <dt className="eyebrow">Launch</dt>
-                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
-              </div>
-              <div>
-                <dt className="eyebrow">Model</dt>
-                <dd className="mt-2 text-lg font-bold text-[color:var(--color-navy)]">Student-led</dd>
-              </div>
-            </dl>
+          {/* Right: the AmplifyMark, given room */}
+          <div className="lg:col-span-5 flex items-center justify-center">
+            <AmplifyMark size={320} tone="dark" ariaHidden />
           </div>
         </div>
+
+        {/* Full-width metrics strip below */}
+        <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-4 lg:py-10">
+          <div>
+            <dt className="eyebrow">Founding</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">4 chapters</dd>
+          </div>
+          <div>
+            <dt className="eyebrow">Location</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Fort Bend, TX</dd>
+          </div>
+          <div>
+            <dt className="eyebrow">Launch</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
+          </div>
+          <div>
+            <dt className="eyebrow">Model</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Student-led</dd>
+          </div>
+        </dl>
       </Container>
     </section>
   );
