@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { PlaceholderPage } from "@/components/layout/PlaceholderPage";
+import { ComingSoon } from "@/components/layout/ComingSoon";
 
 export const metadata: Metadata = {
   title: "Impact",
-  description: "How Amplify HQ measures its work — and what we&apos;ll report as the network grows.",
+  description: "Amplify HQ's impact metrics — coming soon.",
 };
 
 export default function ImpactPage() {
-  return (
-    <PlaceholderPage
-      eyebrow="Impact"
-      title="We&apos;re early — and we&apos;re measuring honestly."
-      description="The full Impact page will report on students reached, chapters, partnerships, projects, and events as those numbers come in. The homepage summarizes what we track today."
-    />
-  );
+  return <ComingSoon title="The impact" eyebrow="Impact" />;
 }
