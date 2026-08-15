@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
-import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SchoolLogo } from "@/components/chapters/SchoolLogo";
 import { Button } from "@/components/ui/Button";
@@ -32,8 +31,6 @@ const board: BoardMember[] = [
 export default function AboutPage() {
   return (
     <>
-      <BackToHome />
-
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">

@@ -17,17 +17,11 @@ export type NavItem = {
 };
 
 export const primaryNav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Start a Chapter", href: "/start-a-chapter" },
   { label: "Partners", href: "/partners" },
-  { label: "Contact", href: "/contact" },
-  { label: "Donate", href: "/donate" },
-];
-
-/* Utility links shown in the top bar above the main nav. */
-export const utilityNav: NavItem[] = [
-  { label: "Home", href: "/" },
   { label: "Contact", href: "/contact" },
   { label: "Donate", href: "/donate" },
 ];

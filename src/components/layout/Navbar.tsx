@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { Wordmark } from "./Wordmark";
 import { Button } from "@/components/ui/Button";
-import { primaryNav, utilityNav } from "@/lib/site";
+import { primaryNav } from "@/lib/site";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -35,27 +35,6 @@ export function Navbar() {
           : "bg-[color:var(--color-ivory)] border-b border-transparent"
       }`}
     >
-      {/* Utility strip — Contact + Donate */}
-      <div className="border-b border-[color:var(--color-line)]/60 bg-[color:var(--color-navy)] text-white">
-        <Container>
-          <div className="flex h-9 items-center justify-end gap-6 text-[0.75rem] font-medium">
-            {utilityNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`transition-colors ${
-                  item.label === "Donate"
-                    ? "font-semibold text-[color:var(--color-coral)] hover:text-white"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </div>
-
       <Container>
         <div className="flex h-16 items-center justify-between gap-6 lg:h-20">
           <Wordmark size="md" />
@@ -64,19 +43,26 @@ export function Navbar() {
             aria-label="Primary"
             className="hidden lg:flex items-center gap-7 text-[0.9rem] font-medium text-[color:var(--color-navy)]"
           >
-            {primaryNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group relative py-2 transition-colors hover:text-[color:var(--color-coral)]"
-              >
-                <span>{item.label}</span>
-                <span
-                  aria-hidden
-                  className="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-[color:var(--color-coral)] transition-transform duration-300 ease-out group-hover:scale-x-100"
-                />
-              </Link>
-            ))}
+            {primaryNav.map((item) => {
+              const isDonate = item.label === "Donate";
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`group relative py-2 transition-colors ${
+                    isDonate
+                      ? "font-semibold text-[color:var(--color-coral)] hover:text-[color:var(--color-navy)]"
+                      : "hover:text-[color:var(--color-coral)]"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-[color:var(--color-coral)] transition-transform duration-300 ease-out group-hover:scale-x-100"
+                  />
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -116,7 +102,7 @@ export function Navbar() {
       </Container>
 
       {open ? (
-        <div className="lg:hidden fixed inset-x-0 top-[6.25rem] bottom-0 z-30 bg-[color:var(--color-ivory)] border-t border-[color:var(--color-line)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 bg-[color:var(--color-ivory)] border-t border-[color:var(--color-line)] overflow-y-auto">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col divide-y divide-[color:var(--color-line)]">
               {primaryNav.map((item, i) => (
@@ -130,21 +116,6 @@ export function Navbar() {
                     {item.label}
                   </span>
                   <span className="eyebrow">{String(i + 1).padStart(2, "0")}</span>
-                </Link>
-              ))}
-              {utilityNav.map((item, i) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-baseline justify-between py-5"
-                >
-                  <span className="text-2xl font-bold text-[color:var(--color-navy)]">
-                    {item.label}
-                  </span>
-                  <span className="eyebrow">
-                    {String(primaryNav.length + i + 1).padStart(2, "0")}
-                  </span>
                 </Link>
               ))}
               <div className="pt-6 pb-10">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { ChapterLeadForm } from "@/components/forms/ChapterLeadForm";
@@ -55,8 +54,6 @@ const onboardingSteps = [
 export default function StartAChapterPage() {
   return (
     <>
-      <BackToHome />
-
       {/* Big prominent apply CTA at the top */}
       <section className="bg-[color:var(--color-coral)] py-14 text-white lg:py-16">
         <Container>

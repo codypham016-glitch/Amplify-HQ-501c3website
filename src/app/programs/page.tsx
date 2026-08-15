@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
-import { BackToHome } from "@/components/layout/BackToHome";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { ProgramCalendar } from "@/components/home/ProgramCalendar";
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
 export default function ProgramsPage() {
   return (
     <>
-      <BackToHome />
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
