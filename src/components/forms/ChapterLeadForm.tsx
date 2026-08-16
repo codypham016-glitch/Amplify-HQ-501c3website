@@ -149,7 +149,7 @@ export function ChapterLeadForm() {
             )}
           </Field>
 
-          <Field id="grade" label="Grade next year" error={errors.grade} required>
+          <Field id="grade" label="Grade" error={errors.grade} required>
             {(p) => (
               <select
                 {...p}
@@ -168,7 +168,7 @@ export function ChapterLeadForm() {
           </Field>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           <Field id="city" label="City" error={errors.city} required>
             {(p) => (
               <input
@@ -182,7 +182,7 @@ export function ChapterLeadForm() {
             )}
           </Field>
 
-          <Field id="state" label="State" error={errors.state} required>
+          <Field id="state" label="State/Province" error={errors.state} required>
             {(p) => (
               <input
                 {...p}
@@ -191,6 +191,19 @@ export function ChapterLeadForm() {
                 className={inputClass}
                 value={values.state}
                 onChange={(e) => update("state", e.target.value)}
+              />
+            )}
+          </Field>
+
+          <Field id="country" label="Country" error={errors.country} required>
+            {(p) => (
+              <input
+                {...p}
+                type="text"
+                autoComplete="country-name"
+                className={inputClass}
+                value={values.country}
+                onChange={(e) => update("country", e.target.value)}
               />
             )}
           </Field>
@@ -244,7 +257,7 @@ export function ChapterLeadForm() {
           Building the chapter
         </legend>
         <p className="-mt-4 text-sm text-[color:var(--color-ink-2)]">
-          No experience required — these help us understand where you&apos;re starting from. Leave anything blank if it doesn&apos;t apply.
+          No experience required. These help us understand where you&apos;re starting from. Leave anything blank if it doesn&apos;t apply.
         </p>
 
         <Field

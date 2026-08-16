@@ -11,6 +11,7 @@ export type ChapterLeadApplication = {
   grade: string;
   city: string;
   state: string;
+  country: string;
   motivation: string;
   interest: string;
   leadership: string;
@@ -27,6 +28,7 @@ export const EMPTY_APPLICATION: ChapterLeadApplication = {
   grade: "",
   city: "",
   state: "",
+  country: "",
   motivation: "",
   interest: "",
   leadership: "",
@@ -46,6 +48,7 @@ const REQUIRED: (keyof ChapterLeadApplication)[] = [
   "grade",
   "city",
   "state",
+  "country",
   "motivation",
 ];
 
@@ -55,7 +58,8 @@ const LABELS: Record<keyof ChapterLeadApplication, string> = {
   school: "School",
   grade: "Grade",
   city: "City",
-  state: "State",
+  state: "State/Province",
+  country: "Country",
   motivation: "This answer",
   interest: "This answer",
   leadership: "This answer",
@@ -81,7 +85,7 @@ export function validateApplication(values: ChapterLeadApplication): FieldErrors
   }
 
   if (values.motivation.trim() && values.motivation.trim().length < 40) {
-    errors.motivation = "Tell us a little more — a few sentences is plenty.";
+    errors.motivation = "Tell us a little more. A few sentences is plenty.";
   }
 
   for (const [key, value] of Object.entries(values) as [
