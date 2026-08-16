@@ -11,7 +11,7 @@ export function Manifesto() {
         {/* Mission */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 pb-20 border-b border-[color:var(--color-line)]">
           <div className="lg:col-span-4">
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
               Our mission
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
@@ -20,7 +20,7 @@ export function Manifesto() {
           </div>
 
           <div className="lg:col-span-7 lg:col-start-6">
-            <p className="text-[clamp(1.5rem,2.4vw,2.1rem)] font-semibold leading-[1.3] text-[color:var(--color-navy)]">
+            <p className="text-lg leading-[1.7] text-[color:var(--color-navy-2)]">
               Amplify HQ helps high school students explore the intersection of business and psychology through workshops, real projects, and conversations with the people actually doing the work.
             </p>
           </div>
@@ -29,7 +29,7 @@ export function Manifesto() {
         {/* Who we are */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 pt-20">
           <div className="lg:col-span-4">
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
               Who we are
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
