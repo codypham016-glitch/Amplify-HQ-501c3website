@@ -35,7 +35,7 @@ export function ChapterLogoStrip({
             </h2>
           </div>
           {subtitle ? (
-            <p className="lg:col-span-6 lg:col-start-7 self-end text-base leading-[1.65] text-[color:var(--color-navy-2)]">
+            <p className="lg:col-span-6 lg:col-start-7 lg:mt-10 text-base leading-[1.65] text-[color:var(--color-navy-2)]">
               {subtitle}
             </p>
           ) : null}

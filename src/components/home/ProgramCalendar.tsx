@@ -21,7 +21,7 @@ export function ProgramCalendar() {
               Eight meetings. A working year.
             </h2>
           </div>
-          <p className="lg:col-span-5 lg:col-start-8 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+          <p className="lg:col-span-5 lg:col-start-8 lg:mt-14 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
             One meeting a month, across two semesters. The theme is set nationally; speakers and case material are chosen by each chapter.
           </p>
         </div>

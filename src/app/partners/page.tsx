@@ -78,7 +78,7 @@ export default function PartnersPage() {
                 Pick a shape that fits
               </h2>
             </div>
-            <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+            <p className="lg:col-span-6 lg:col-start-7 lg:mt-14 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
               The commitment scales. An hour, an evening, a term, a summer. Any of them help.
             </p>
           </div>
