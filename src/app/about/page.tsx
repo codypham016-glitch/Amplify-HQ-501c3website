@@ -115,15 +115,12 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-8">
               <SectionLabel>Founding chapters</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Where Amplify starts.
+                Where is Amplify.
               </h2>
             </div>
-            <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Six high schools open Amplify chapters in {site.launchTerm}. Each chapter is run entirely by its own students.
-            </p>
           </div>
 
           <ul className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
