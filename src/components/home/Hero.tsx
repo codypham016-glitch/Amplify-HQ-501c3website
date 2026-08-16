@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { site } from "@/lib/site";
 
 /**
  * Hero. Real logo image on the right, text-driven content on the left.
@@ -48,19 +47,19 @@ export function Hero() {
         <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-4 lg:py-10">
           <div>
             <dt className="eyebrow">Founding</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">4 chapters</dd>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">6 chapters</dd>
           </div>
           <div>
-            <dt className="eyebrow">Location</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Fort Bend, TX</dd>
+            <dt className="eyebrow">Headquarters</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Houston, TX</dd>
           </div>
           <div>
-            <dt className="eyebrow">Launch</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
+            <dt className="eyebrow">Est</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">2026</dd>
           </div>
           <div>
-            <dt className="eyebrow">Model</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Student-led</dd>
+            <dt className="eyebrow">Status</dt>
+            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">501(c)(3)</dd>
           </div>
         </dl>
       </Container>

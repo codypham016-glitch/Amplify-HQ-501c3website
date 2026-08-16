@@ -98,10 +98,6 @@ export default function StartAChapterPage() {
                 <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
               </div>
               <div>
-                <dt className="eyebrow">Time to apply</dt>
-                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">~10 minutes</dd>
-              </div>
-              <div>
                 <dt className="eyebrow">Experience</dt>
                 <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">Not required</dd>
               </div>

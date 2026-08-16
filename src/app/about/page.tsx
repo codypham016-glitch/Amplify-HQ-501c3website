@@ -16,15 +16,35 @@ type BoardMember = {
   name: string;
   role: string;
   bio: string;
-  photo: string;
+  photo?: string;
 };
 
 const board: BoardMember[] = [
   {
     name: "Hector Pham",
-    role: "COO & Board Member",
+    role: "Chief Executive Officer",
     photo: "/team/hector.webp",
-    bio: "Founding leader bringing Amplify HQ from New York to Texas. Driving the organization's expansion across founding chapters and shaping the operational vision.",
+    bio: "Founding leader bringing Amplify HQ from New York to Texas. Setting the organizational vision and driving expansion across founding chapters.",
+  },
+  {
+    name: "To be announced",
+    role: "Chief Operating Officer",
+    bio: "Leading day-to-day operations across chapters and the national board.",
+  },
+  {
+    name: "To be announced",
+    role: "Chief Financial Officer",
+    bio: "Owning nonprofit finance, budgeting, and fundraising oversight.",
+  },
+  {
+    name: "To be announced",
+    role: "Chief Technology Officer",
+    bio: "Building the digital infrastructure that keeps chapters connected.",
+  },
+  {
+    name: "To be announced",
+    role: "Chief Marketing Officer",
+    bio: "Shaping the Amplify HQ voice, brand, and outward-facing presence.",
   },
 ];
 
@@ -50,12 +70,12 @@ export default function AboutPage() {
                 <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">501(c)(3)</dd>
               </div>
               <div>
-                <dt className="eyebrow">Launch</dt>
-                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
+                <dt className="eyebrow">Est</dt>
+                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">2026</dd>
               </div>
               <div>
-                <dt className="eyebrow">Model</dt>
-                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">Student-led</dd>
+                <dt className="eyebrow">Headquarters</dt>
+                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">Houston, TX</dd>
               </div>
             </dl>
           </div>
@@ -72,38 +92,46 @@ export default function AboutPage() {
                 The people building Amplify.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Amplify HQ is student-led. The board members below are the national leadership growing this from the ground up.
+                Amplify HQ is student-led. The board below is the national leadership growing this from the ground up.
               </p>
             </div>
 
-            <div className="lg:col-span-7 space-y-16">
+            <ul className="lg:col-span-7 space-y-14">
               {board.map((m) => (
-                <article key={m.name} className="grid grid-cols-1 gap-8 sm:grid-cols-12 sm:gap-10">
-                  <div className="sm:col-span-5">
-                    <div className="relative aspect-[4/5] w-full max-w-xs bg-[color:var(--color-ivory-2)] overflow-hidden border border-[color:var(--color-line)]">
-                      <Image
-                        src={m.photo}
-                        alt={m.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
+                <li key={m.role} className="grid grid-cols-1 gap-6 sm:grid-cols-12 sm:gap-8">
+                  <div className="sm:col-span-4">
+                    <div className="relative aspect-[4/5] w-full max-w-[220px] bg-[color:var(--color-ivory-2)] overflow-hidden border border-[color:var(--color-line)]">
+                      {m.photo ? (
+                        <Image
+                          src={m.photo}
+                          alt={m.name}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 25vw"
+                        />
+                      ) : (
+                        <div className="flex h-full items-center justify-center">
+                          <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-navy-3)]">
+                            TBA
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
-                  <div className="sm:col-span-7 flex flex-col justify-center">
+                  <div className="sm:col-span-8 flex flex-col justify-center">
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-coral)]">
                       {m.role}
                     </p>
                     <h3 className="mt-3 text-2xl font-bold leading-[1.2] text-[color:var(--color-navy)]">
                       {m.name}
                     </h3>
-                    <p className="mt-5 text-base leading-[1.65] text-[color:var(--color-navy-2)]">
+                    <p className="mt-4 text-base leading-[1.65] text-[color:var(--color-navy-2)]">
                       {m.bio}
                     </p>
                   </div>
-                </article>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </Container>
       </section>
@@ -119,11 +147,11 @@ export default function AboutPage() {
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Four Fort Bend ISD high schools open Amplify chapters in {site.launchTerm}. Each chapter is run entirely by its own students.
+              Six Fort Bend ISD high schools open Amplify chapters in {site.launchTerm}. Each chapter is run entirely by its own students.
             </p>
           </div>
 
-          <ul className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {chapters.map((c, i) => (
               <li
                 key={c.slug}

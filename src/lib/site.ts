@@ -117,6 +117,26 @@ export const chapters: Chapter[] = [
     district: "Fort Bend ISD",
     status: "founding",
   },
+  {
+    slug: "travis",
+    school: "Travis High School",
+    shortName: "Travis",
+    monogram: "T",
+    city: "Richmond",
+    state: "TX",
+    district: "Fort Bend ISD",
+    status: "founding",
+  },
+  {
+    slug: "ridge-point",
+    school: "Ridge Point High School",
+    shortName: "Ridge Point",
+    monogram: "RP",
+    city: "Missouri City",
+    state: "TX",
+    district: "Fort Bend ISD",
+    status: "founding",
+  },
 ];
 
 /* ---------------------------------------------------------------- *
@@ -373,13 +393,14 @@ export const chapterLeadAreas: ChapterLeadArea[] = [
   },
 ];
 
-/* Real chapter roles from official Amplify structure. */
+/* Chapter officer structure. */
 export const chapterRoles = [
-  "1–2 Chapter Leads / Presidents",
+  "2 Co-Presidents",
   "1 Vice President",
-  "1 Secretary",
-  "2 Social Media Chairs",
-  "2 Events Chairs",
+  "PR Officer — collaborates with businesses in the area",
+  "Treasurer",
+  "Secretary",
+  "Social Media Manager — pictures, social media",
 ];
 
 /* Real national board roles. */

@@ -8,7 +8,7 @@ import { chapters, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Chapters",
   description:
-    "Amplify HQ's founding chapters. Four Fort Bend ISD high schools launching Fall 2026.",
+    "Amplify HQ's founding chapters. Six Fort Bend ISD high schools launching Fall 2026.",
 };
 
 export default function ChaptersPage() {
@@ -20,11 +20,11 @@ export default function ChaptersPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Chapters</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Four schools. One network.
+                Six schools. One network.
               </h1>
             </div>
             <p className="lg:col-span-8 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Amplify HQ opens in {site.launchTerm} across four Fort Bend ISD high schools. Each chapter is run by its own students — officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
+              Amplify HQ opens in {site.launchTerm} across six Fort Bend ISD high schools. Each chapter is run by its own students. Officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
             </p>
           </div>
         </Container>
@@ -45,7 +45,7 @@ export default function ChaptersPage() {
                 Your school could be <span className="text-[color:var(--color-coral)]">next</span>.
               </h2>
               <p className="mt-8 max-w-xl text-lg leading-[1.65] text-white/75">
-                Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience — you bring the school, we bring the program.
+                Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience. You bring the school, we bring the program.
               </p>
             </div>
             <div className="lg:col-span-4 flex items-end">
