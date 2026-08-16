@@ -15,36 +15,15 @@ export const metadata: Metadata = {
 type BoardMember = {
   name: string;
   role: string;
-  bio: string;
   photo?: string;
 };
 
 const board: BoardMember[] = [
-  {
-    name: "Hector Pham",
-    role: "Chief Executive Officer",
-    bio: "Founding leader bringing Amplify HQ from New York to Texas. Setting the organizational vision and driving expansion across founding chapters.",
-  },
-  {
-    name: "To be announced",
-    role: "Chief Operating Officer",
-    bio: "Leading day-to-day operations across chapters and the national board.",
-  },
-  {
-    name: "To be announced",
-    role: "Chief Financial Officer",
-    bio: "Owning nonprofit finance, budgeting, and fundraising oversight.",
-  },
-  {
-    name: "To be announced",
-    role: "Chief Technology Officer",
-    bio: "Building the digital infrastructure that keeps chapters connected.",
-  },
-  {
-    name: "To be announced",
-    role: "Chief Marketing Officer",
-    bio: "Shaping the Amplify HQ voice, brand, and outward-facing presence.",
-  },
+  { name: "Hector Pham", role: "Chief Executive Officer" },
+  { name: "To be announced", role: "Chief Operating Officer" },
+  { name: "To be announced", role: "Chief Financial Officer" },
+  { name: "To be announced", role: "Chief Technology Officer" },
+  { name: "To be announced", role: "Chief Marketing Officer" },
 ];
 
 export default function AboutPage() {
@@ -86,12 +65,12 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <SectionLabel>Board members</SectionLabel>
+              <SectionLabel>National Executive Board</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
                 The people building Amplify.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Amplify HQ is student-led. The board below is the national leadership growing this from the ground up.
+                Amplify HQ is student-led. The national executive board below is the leadership growing this from the ground up.
               </p>
             </div>
 
@@ -124,9 +103,6 @@ export default function AboutPage() {
                     <h3 className="mt-3 text-2xl font-bold leading-[1.2] text-[color:var(--color-navy)]">
                       {m.name}
                     </h3>
-                    <p className="mt-4 text-base leading-[1.65] text-[color:var(--color-navy-2)]">
-                      {m.bio}
-                    </p>
                   </div>
                 </li>
               ))}
