@@ -40,7 +40,7 @@ export function TheWork() {
               What students actually make.
             </h2>
           </div>
-          <p className="lg:col-span-6 lg:col-start-7 lg:mt-14 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
+          <p className="lg:col-span-6 lg:col-start-7 lg:mt-10 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
             Amplify is a program where members build things — not just discuss them. Here&apos;s what fills this section as chapters run their first year of programming.
           </p>
         </div>
