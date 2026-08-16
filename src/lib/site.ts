@@ -410,10 +410,10 @@ export const chapterLeadAreas: ChapterLeadArea[] = [
 export const chapterRoles = [
   "2 Co-Presidents",
   "1 Vice President",
-  "Public Relations Officer, collaborates with businesses in the area",
+  "Public Relations Officer",
   "Treasurer",
   "Secretary",
-  "Social Media Manager — pictures, social media",
+  "Social Media Manager",
 ];
 
 /* Real national board roles. */
