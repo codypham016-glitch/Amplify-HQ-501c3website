@@ -15,7 +15,7 @@ export function Participate() {
               Get involved
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-              A place in this for you.
+              A place in this for you
             </h2>
           </div>
 

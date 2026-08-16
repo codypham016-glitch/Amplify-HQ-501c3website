@@ -20,7 +20,7 @@ export default function PartnersPage() {
             <div className="lg:col-span-5">
               <SectionLabel>Who we work with</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                We&apos;re building the first partner cohort now.
+                We&apos;re building the first partner cohort now
               </h1>
               <p className="mt-8 max-w-md text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 No invented logos. No fabricated partner rosters. If your organization fits below, we&apos;d like to talk.
@@ -54,7 +54,7 @@ export default function PartnersPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Why partner with us</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Give a student their first real audience.
+                Give a student their first real audience
               </h2>
               <p className="mt-10 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Amplify HQ&apos;s goal is to help high school students explore the intersection of business and psychology through the people actually doing the work. We partner with organizations who want to invest in the next generation of curious, ambitious young leaders. Whether that&apos;s an hour on a chapter call, a real case for a student team, or an internship inside your organization, the value goes both ways.
@@ -75,7 +75,7 @@ export default function PartnersPage() {
             <div className="lg:col-span-4">
               <SectionLabel>Four ways in</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Pick a shape that fits.
+                Pick a shape that fits
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">

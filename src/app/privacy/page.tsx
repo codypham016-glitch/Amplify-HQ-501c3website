@@ -15,7 +15,7 @@ export default function PrivacyPage() {
             Privacy
           </p>
           <h1 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-            Privacy policy.
+            Privacy policy
           </h1>
           <p className="mt-10 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
             The privacy policy will be reviewed by counsel before publication. Until then, please treat any information submitted through this site as governed by good-faith nonprofit practices. We collect only what forms explicitly ask for, we don&apos;t sell data, and we don&apos;t share personal information outside the organization without consent.

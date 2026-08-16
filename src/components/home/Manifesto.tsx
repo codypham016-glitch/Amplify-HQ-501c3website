@@ -15,7 +15,7 @@ export function Manifesto() {
               Our mission
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-              Why Amplify exists.
+              Why Amplify exists
             </h2>
           </div>
 
@@ -33,7 +33,7 @@ export function Manifesto() {
               Who we are
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-              A student-led community.
+              A youth-led community
             </h2>
           </div>
 

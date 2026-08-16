@@ -20,7 +20,7 @@ export default function ProgramsPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Programs</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                What a year in Amplify actually looks like.
+                What a year in Amplify actually looks like
               </h1>
             </div>
             <p className="lg:col-span-7 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
@@ -62,7 +62,7 @@ export default function ProgramsPage() {
             <div className="lg:col-span-8">
               <SectionLabel tone="dark">Launching {site.launchTerm}</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-white">
-                Run this at <span className="text-[color:var(--color-coral)]">your</span> school.
+                Run this at <span className="text-[color:var(--color-coral)]">your</span> school
               </h2>
               <p className="mt-8 max-w-xl text-lg leading-[1.65] text-white/75">
                 Chapter Leads get the full program calendar, workshop materials, and support from the national team.

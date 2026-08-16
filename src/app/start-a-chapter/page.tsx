@@ -63,7 +63,7 @@ export default function StartAChapterPage() {
                 Get involved
               </p>
               <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
-                Bring Amplify to your school.
+                Bring Amplify to your school
               </h2>
               <p className="mt-4 text-base text-white/90 lg:text-lg">
                 Skip the details. Click below to apply as a Chapter Lead.
@@ -88,7 +88,7 @@ export default function StartAChapterPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Start a chapter</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                What being a Chapter Lead looks like.
+                What being a Chapter Lead looks like
               </h1>
               <p className="mt-10 max-w-xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience. The national team provides the program, the materials, and the support. You bring your school.
@@ -115,7 +115,7 @@ export default function StartAChapterPage() {
             <div className="lg:col-span-4">
               <SectionLabel>What you&apos;ll do</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Four areas of impact.
+                Four areas of impact
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Chapter Leads shape their community around four core responsibilities. The actual work of building a chapter that lasts.
@@ -157,7 +157,7 @@ export default function StartAChapterPage() {
             <div className="lg:col-span-5">
               <SectionLabel>Your local team</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Who runs a chapter.
+                Who runs a chapter
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 You&apos;ll recruit these roles from your own campus. Students passionate about behavioral science and business, ready to build something new.
@@ -207,7 +207,7 @@ export default function StartAChapterPage() {
             <div className="lg:col-span-4">
               <SectionLabel>The application</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Read by a person. Answered by one.
+                Read by a person, answered by one
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Submitting doesn&apos;t commit you to anything. The next step is a conversation.

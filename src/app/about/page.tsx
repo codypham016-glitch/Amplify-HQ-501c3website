@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="lg:col-span-8">
               <SectionLabel>About</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Who we are.
+                Who we are
               </h1>
               <p className="mt-10 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 {site.description}
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <SectionLabel>National Executive Board</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                The people building Amplify.
+                The people building Amplify
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Amplify HQ is youth-led. The national executive board below is the leadership growing this from the ground up.
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Chapters</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Where is Amplify.
+                Where is Amplify
               </h2>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function AboutPage() {
             <div className="lg:col-span-8">
               <SectionLabel tone="dark">Get involved</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-white">
-                Your school could be <span className="text-[color:var(--color-coral)]">next</span>.
+                Your school could be <span className="text-[color:var(--color-coral)]">next</span>
               </h2>
               <p className="mt-8 max-w-xl text-lg leading-[1.65] text-white/75">
                 Chapter Leads are students who want to build something real on their own campus. You bring the school, we bring the program.

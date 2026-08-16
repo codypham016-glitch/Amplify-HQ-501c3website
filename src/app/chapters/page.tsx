@@ -20,7 +20,7 @@ export default function ChaptersPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Chapters</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Six schools. One network.
+                Six schools, one network
               </h1>
             </div>
             <p className="lg:col-span-8 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
@@ -42,7 +42,7 @@ export default function ChaptersPage() {
             <div className="lg:col-span-8">
               <SectionLabel tone="dark">Expanding</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-white">
-                Your school could be <span className="text-[color:var(--color-coral)]">next</span>.
+                Your school could be <span className="text-[color:var(--color-coral)]">next</span>
               </h2>
               <p className="mt-8 max-w-xl text-lg leading-[1.65] text-white/75">
                 Chapter Leads are students who want to build something real on their own campus. You don&apos;t need prior business experience. You bring the school, we bring the program.

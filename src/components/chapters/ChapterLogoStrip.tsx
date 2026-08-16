@@ -17,7 +17,7 @@ type ChapterLogoStripProps = {
 export function ChapterLogoStrip({
   chapters,
   eyebrow = "Where Amplify already runs",
-  title = "Chapters.",
+  title = "Chapters",
   subtitle,
 }: ChapterLogoStripProps) {
   const items = [...chapters, ...chapters];
@@ -55,16 +55,16 @@ export function ChapterLogoStrip({
         />
 
         <ul
-          className="flex items-center gap-16 py-4 whitespace-nowrap"
+          className="flex items-center gap-10 py-6 whitespace-nowrap"
           style={{
             width: "max-content",
-            animation: "chapter-marquee 32s linear infinite",
+            animation: "chapter-marquee 40s linear infinite",
           }}
         >
           {items.map((c, i) => (
-            <li key={`${c.slug}-${i}`} className="flex items-center gap-4 shrink-0">
-              <SchoolLogo chapter={c} size={80} />
-              <span className="text-lg font-bold text-[color:var(--color-navy)]">
+            <li key={`${c.slug}-${i}`} className="flex items-center gap-5 shrink-0">
+              <SchoolLogo chapter={c} size={140} />
+              <span className="text-2xl font-bold text-[color:var(--color-navy)]">
                 {c.shortName}
               </span>
             </li>
