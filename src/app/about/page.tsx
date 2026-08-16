@@ -23,7 +23,6 @@ const board: BoardMember[] = [
   {
     name: "Hector Pham",
     role: "Chief Executive Officer",
-    photo: "/team/hector.webp",
     bio: "Founding leader bringing Amplify HQ from New York to Texas. Setting the organizational vision and driving expansion across founding chapters.",
   },
   {
