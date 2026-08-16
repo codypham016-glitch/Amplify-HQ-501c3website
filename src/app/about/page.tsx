@@ -155,7 +155,7 @@ export default function AboutPage() {
             {chapters.map((c, i) => (
               <li
                 key={c.slug}
-                className="bg-white p-8 border border-[color:var(--color-line)] hover:border-[color:var(--color-coral)] transition-colors"
+                className="flex flex-col bg-white p-8 border border-[color:var(--color-line)] hover:border-[color:var(--color-coral)] transition-colors"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[0.72rem] font-semibold tracking-[0.14em] text-[color:var(--color-navy-3)]">
@@ -169,7 +169,24 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-[color:var(--color-navy-3)]">
                   {c.city}, {c.state}
                 </p>
-                <p className="mt-4 pt-4 border-t border-[color:var(--color-line)] text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
+
+                {c.officers && c.officers.length > 0 ? (
+                  <div className="mt-6 pt-6 border-t border-[color:var(--color-line)]">
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[color:var(--color-navy-3)]">
+                      Officers
+                    </p>
+                    <ul className="mt-3 space-y-2">
+                      {c.officers.map((o) => (
+                        <li key={`${o.name}-${o.role}`} className="text-sm text-[color:var(--color-navy)]">
+                          <span className="font-bold">{o.name}</span>
+                          <span className="text-[color:var(--color-navy-3)]"> · {o.role}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+
+                <p className="mt-auto pt-6 border-t border-[color:var(--color-line)] text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
                   Opens {site.launchTerm}
                 </p>
               </li>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Button } from "@/components/ui/Button";
+import { ChapterLogoStrip } from "@/components/chapters/ChapterLogoStrip";
 import { ChapterLeadForm } from "@/components/forms/ChapterLeadForm";
-import { site, chapterLeadAreas, chapterRoles } from "@/lib/site";
+import { site, chapters, chapterLeadAreas, chapterRoles } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Start a Chapter",
+  title: "Get Involved",
   description:
     "Bring Amplify HQ to your high school. Apply to become a Chapter Lead. No prior business experience required.",
 };
@@ -60,13 +60,13 @@ export default function StartAChapterPage() {
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-white/85">
-                Ready right now?
+                Get involved
               </p>
               <h2 className="mt-4 text-[clamp(1.75rem,3.5vw,2.75rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
                 Bring Amplify to your school.
               </h2>
               <p className="mt-4 text-base text-white/90 lg:text-lg">
-                Skip the details. Click below to apply.
+                Skip the details. Click below to apply as a Chapter Lead.
               </p>
             </div>
             <Link
@@ -78,6 +78,12 @@ export default function StartAChapterPage() {
           </div>
         </Container>
       </section>
+
+      {/* Where Amplify already runs — logo marquee */}
+      <ChapterLogoStrip
+        chapters={chapters}
+        subtitle="Six Fort Bend ISD high schools open Amplify chapters in Fall 2026."
+      />
 
       <section className="py-24 lg:py-32">
         <Container>

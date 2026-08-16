@@ -17,7 +17,7 @@ export function Hero() {
             </p>
 
             <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-              What makes people choose?
+              What guides people&apos;s decisions?
             </h1>
 
             <p className="mt-10 max-w-xl text-lg leading-[1.6] text-[color:var(--color-navy-2)]">

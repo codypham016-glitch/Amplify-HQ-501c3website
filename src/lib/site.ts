@@ -20,7 +20,7 @@ export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programs", href: "/programs" },
-  { label: "Start a Chapter", href: "/start-a-chapter" },
+  { label: "Get Involved", href: "/start-a-chapter" },
   { label: "Partners", href: "/partners" },
   { label: "Contact", href: "/contact" },
   { label: "Donate", href: "/donate" },
@@ -65,6 +65,11 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
  * Chapters
  * ---------------------------------------------------------------- */
 
+export type ChapterOfficer = {
+  name: string;
+  role: string;
+};
+
 export type Chapter = {
   slug: string;
   school: string;
@@ -74,6 +79,9 @@ export type Chapter = {
   state: string;
   district: string;
   status: "founding";
+  /** Confirmed officers for the founding term. Optional — chapters
+   *  in early recruitment show no roster yet. */
+  officers?: ChapterOfficer[];
 };
 
 export const chapters: Chapter[] = [
@@ -96,6 +104,10 @@ export const chapters: Chapter[] = [
     state: "TX",
     district: "Fort Bend ISD",
     status: "founding",
+    officers: [
+      { name: "Aasim Dhukka", role: "Co-President" },
+      { name: "Hector Pham", role: "Co-President" },
+    ],
   },
   {
     slug: "clements",
@@ -119,7 +131,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "travis",
-    school: "Travis High School",
+    school: "William B. Travis High School",
     shortName: "Travis",
     monogram: "T",
     city: "Richmond",
