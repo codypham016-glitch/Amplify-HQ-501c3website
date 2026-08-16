@@ -17,7 +17,7 @@ type ChapterLogoStripProps = {
 export function ChapterLogoStrip({
   chapters,
   eyebrow = "Where Amplify already runs",
-  title = "Founding chapters.",
+  title = "Chapters.",
   subtitle,
 }: ChapterLogoStripProps) {
   const items = [...chapters, ...chapters];

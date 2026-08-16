@@ -80,10 +80,7 @@ export default function StartAChapterPage() {
       </section>
 
       {/* Where Amplify already runs — logo marquee */}
-      <ChapterLogoStrip
-        chapters={chapters}
-        subtitle="Six high schools open Amplify chapters in Fall 2026."
-      />
+      <ChapterLogoStrip chapters={chapters} />
 
       <section className="py-24 lg:py-32">
         <Container>

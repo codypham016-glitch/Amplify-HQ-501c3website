@@ -111,12 +111,12 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Founding chapters */}
+      {/* Chapters */}
       <section className="py-24 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <SectionLabel>Founding chapters</SectionLabel>
+              <SectionLabel>Chapters</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
                 Where is Amplify.
               </h2>

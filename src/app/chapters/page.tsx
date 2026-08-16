@@ -8,7 +8,7 @@ import { chapters, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Chapters",
   description:
-    "Amplify HQ's founding chapters. Six high schools launching Fall 2026.",
+    "Amplify HQ's chapters.",
 };
 
 export default function ChaptersPage() {
