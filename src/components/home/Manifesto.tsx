@@ -30,10 +30,10 @@ export function Manifesto() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 pt-20">
           <div className="lg:col-span-4">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-navy-3)]">
-              Who we are
+              What we do
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-              A youth-led community
+              Speakers, projects, community
             </h2>
           </div>
 
