@@ -118,7 +118,7 @@ export default function StartAChapterPage() {
                 Four Areas of Impact
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Chapter Leads shape their community around four core responsibilities. The actual work of building a chapter that lasts.
+                The actual work of building a chapter that creates a lasting impact.
               </p>
             </div>
 
