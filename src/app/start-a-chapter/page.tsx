@@ -115,7 +115,7 @@ export default function StartAChapterPage() {
             <div className="lg:col-span-4">
               <SectionLabel>What you&apos;ll do</SectionLabel>
               <h2 className="mt-8 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-                Four areas of impact
+                Four Areas of Impact
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
                 Chapter Leads shape their community around four core responsibilities. The actual work of building a chapter that lasts.
