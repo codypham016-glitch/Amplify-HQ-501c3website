@@ -37,7 +37,7 @@ export function TheWork() {
               The work
             </p>
             <h2 className="mt-6 text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.02em] text-[color:var(--color-navy)]">
-              What students actually make.
+              What members actually do
             </h2>
           </div>
           <p className="lg:col-span-6 lg:col-start-7 lg:mt-10 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
