@@ -148,6 +148,7 @@ export const chapters: Chapter[] = [
     state: "TX",
     district: "Fort Bend ISD",
     status: "founding",
+    officers: [{ name: "Joel John", role: "Co-President" }],
   },
 ];
 
