@@ -70,7 +70,7 @@ export default function AboutPage() {
                 The people building Amplify.
               </h2>
               <p className="mt-8 text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-                Amplify HQ is student-led. The national executive board below is the leadership growing this from the ground up.
+                Amplify HQ is youth-led. The national executive board below is the leadership growing this from the ground up.
               </p>
             </div>
 
