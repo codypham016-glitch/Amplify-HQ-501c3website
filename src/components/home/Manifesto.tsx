@@ -39,7 +39,7 @@ export function Manifesto() {
 
           <div className="lg:col-span-7 lg:col-start-6">
             <p className="text-lg leading-[1.7] text-[color:var(--color-navy-2)]">
-              Amplify HQ is a 501(c)(3) nonprofit founded in 2026 and headquartered in Houston, TX. We open our first six chapters in Fall 2026 across Fort Bend ISD high schools, each one run entirely by its own students. Through guest speakers, community events, and internship and volunteer opportunities, we build a community of people curious about behavioral science, the brain, and how these fields connect to the business world.
+              Amplify HQ is a 501(c)(3) nonprofit founded in 2026 and headquartered in Houston, TX. Each chapter is run entirely by its own students. Through guest speakers, community events, and internship and volunteer opportunities, we build a community of people curious about behavioral science, the brain, and how these fields connect to the business world.
             </p>
 
             <div className="mt-12 grid grid-cols-1 gap-8 border-t border-[color:var(--color-line)] pt-10 sm:grid-cols-3">

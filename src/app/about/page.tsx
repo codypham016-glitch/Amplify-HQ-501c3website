@@ -122,7 +122,7 @@ export default function AboutPage() {
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 self-end text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Six Fort Bend ISD high schools open Amplify chapters in {site.launchTerm}. Each chapter is run entirely by its own students.
+              Six high schools open Amplify chapters in {site.launchTerm}. Each chapter is run entirely by its own students.
             </p>
           </div>
 

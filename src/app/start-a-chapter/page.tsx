@@ -82,7 +82,7 @@ export default function StartAChapterPage() {
       {/* Where Amplify already runs — logo marquee */}
       <ChapterLogoStrip
         chapters={chapters}
-        subtitle="Six Fort Bend ISD high schools open Amplify chapters in Fall 2026."
+        subtitle="Six high schools open Amplify chapters in Fall 2026."
       />
 
       <section className="py-24 lg:py-32">
