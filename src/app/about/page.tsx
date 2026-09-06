@@ -20,9 +20,9 @@ type BoardMember = {
 
 const board: BoardMember[] = [
   { name: "Hector Pham", role: "Chief Executive Officer" },
-  { name: "To be announced", role: "Chief Operating Officer" },
+  { name: "Aasim Dhukka", role: "Chief Operating Officer" },
   { name: "To be announced", role: "Chief Financial Officer" },
-  { name: "To be announced", role: "Chief Technology Officer" },
+  { name: "Cody Pham", role: "Chief Technology Officer" },
   { name: "To be announced", role: "Chief Marketing Officer" },
 ];
 
