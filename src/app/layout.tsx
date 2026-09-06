@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { site } from "@/lib/site";
 
 const inter = Inter({
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <ScrollProgress />
         <Navbar />
         <main id="main" className="flex-1">
           {children}

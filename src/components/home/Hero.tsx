@@ -1,67 +1,79 @@
-import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
+import { NeuralPulse } from "@/components/motion/NeuralPulse";
 
 /**
- * Hero. Real logo image on the right, text-driven content on the left.
- * The logo file lives at public/amplify-logo.png.
+ * Hero. Text-driven headline on the left, an animated neural network
+ * on the right that echoes the brand mark. Metrics strip below counts
+ * up when it scrolls into view.
  */
 export function Hero() {
   return (
     <section className="bg-[color:var(--color-ivory)]">
       <Container>
-        <div className="grid grid-cols-1 gap-16 pt-16 pb-20 lg:grid-cols-12 lg:gap-12 lg:pt-24 lg:pb-24">
+        <div className="grid grid-cols-1 gap-16 pt-16 pb-20 lg:grid-cols-12 lg:gap-12 lg:pt-24 lg:pb-24 items-center">
           <div className="lg:col-span-7 flex flex-col">
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-coral)]">
-              Business <span className="text-[color:var(--color-navy-3)]">×</span> Psychology
-            </p>
+            <FadeIn>
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-coral)]">
+                Business <span className="text-[color:var(--color-navy-3)]">×</span> Psychology
+              </p>
+            </FadeIn>
 
-            <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-              What guides people&apos;s decisions?
-            </h1>
+            <FadeIn delay={80}>
+              <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
+                What guides people&apos;s decisions?
+              </h1>
+            </FadeIn>
 
-            <p className="mt-10 max-w-xl text-lg leading-[1.6] text-[color:var(--color-navy-2)]">
-              Amplify HQ gives high school students a place to explore business, psychology, and human behavior alongside the people actually doing the work.
-            </p>
+            <FadeIn delay={180}>
+              <p className="mt-10 max-w-xl text-lg leading-[1.6] text-[color:var(--color-navy-2)]">
+                Amplify HQ gives high school students a place to explore business, psychology, and human behavior alongside the people actually doing the work.
+              </p>
+            </FadeIn>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button href="/about" size="lg">Explore Amplify</Button>
-              <Button href="/start-a-chapter#apply" size="lg" variant="secondary">
-                Start a Chapter
-              </Button>
-            </div>
+            <FadeIn delay={280}>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Button href="/about" size="lg">Explore Amplify</Button>
+                <Button href="/start-a-chapter#apply" size="lg" variant="secondary">
+                  Start a Chapter
+                </Button>
+              </div>
+            </FadeIn>
           </div>
 
-          <div className="lg:col-span-5 flex items-center justify-center">
-            <Image
-              src="/amplify-logo.png"
-              alt="Amplify HQ"
-              width={480}
-              height={300}
-              priority
-              className="w-full h-auto max-w-md"
-            />
+          <div className="lg:col-span-5">
+            <FadeIn delay={200}>
+              <NeuralPulse height={360} className="rounded-sm" />
+            </FadeIn>
           </div>
         </div>
 
-        <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-4 lg:py-10">
-          <div>
-            <dt className="eyebrow">Founding</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">6 chapters</dd>
-          </div>
-          <div>
-            <dt className="eyebrow">Headquarters</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Houston, TX</dd>
-          </div>
-          <div>
-            <dt className="eyebrow">Est</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">2026</dd>
-          </div>
-          <div>
-            <dt className="eyebrow">Status</dt>
-            <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">501(c)(3)</dd>
-          </div>
-        </dl>
+        <FadeIn>
+          <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-4 lg:py-10">
+            <div>
+              <dt className="eyebrow">Founding</dt>
+              <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">
+                <AnimatedCounter value={6} suffix=" chapters" />
+              </dd>
+            </div>
+            <div>
+              <dt className="eyebrow">Headquarters</dt>
+              <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Houston, TX</dd>
+            </div>
+            <div>
+              <dt className="eyebrow">Est</dt>
+              <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">
+                <AnimatedCounter value={2026} duration={1600} />
+              </dd>
+            </div>
+            <div>
+              <dt className="eyebrow">Status</dt>
+              <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">501(c)(3)</dd>
+            </div>
+          </dl>
+        </FadeIn>
       </Container>
     </section>
   );

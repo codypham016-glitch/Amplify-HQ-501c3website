@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { Wordmark } from "./Wordmark";
 import { Button } from "@/components/ui/Button";
+import { ApplyModal } from "@/components/motion/ApplyModal";
 import { primaryNav } from "@/lib/site";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [applyOpen, setApplyOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -60,7 +62,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-3">
             <Button
-              href="/start-a-chapter#apply"
+              onClick={() => setApplyOpen(true)}
               variant="primary"
               size="sm"
               className="hidden sm:inline-flex"
@@ -113,7 +115,10 @@ export function Navbar() {
               ))}
               <div className="pt-6 pb-10">
                 <Button
-                  href="/start-a-chapter#apply"
+                  onClick={() => {
+                    setOpen(false);
+                    setApplyOpen(true);
+                  }}
                   variant="primary"
                   size="lg"
                   className="w-full justify-between"
@@ -126,6 +131,8 @@ export function Navbar() {
           </Container>
         </div>
       ) : null}
+
+      <ApplyModal open={applyOpen} onClose={() => setApplyOpen(false)} />
     </header>
   );
 }
