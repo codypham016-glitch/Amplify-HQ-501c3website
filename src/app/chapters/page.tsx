@@ -24,7 +24,7 @@ export default function ChaptersPage() {
               </h1>
             </div>
             <p className="lg:col-span-8 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Amplify HQ opens in {site.launchTerm} across six high schools. Each chapter is run by its own students. Officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
+              Amplify HQ runs across six high schools. Each chapter is run by its own students. Officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
             </p>
           </div>
         </Container>

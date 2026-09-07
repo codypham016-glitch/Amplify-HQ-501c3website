@@ -97,10 +97,6 @@ export default function StartAChapterPage() {
 
             <dl className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-[color:var(--color-line)] grid grid-cols-1 gap-6 self-end">
               <div>
-                <dt className="eyebrow">Launching</dt>
-                <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">{site.launchTerm}</dd>
-              </div>
-              <div>
                 <dt className="eyebrow">Experience</dt>
                 <dd className="mt-2 text-2xl font-bold text-[color:var(--color-navy)]">Not required</dd>
               </div>
