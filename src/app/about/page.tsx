@@ -158,9 +158,6 @@ export default function AboutPage() {
                   </div>
                 ) : null}
 
-                <p className="mt-auto pt-6 border-t border-[color:var(--color-line)] text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-coral)]">
-                  Opens {site.launchTerm}
-                </p>
               </li>
             ))}
           </ul>

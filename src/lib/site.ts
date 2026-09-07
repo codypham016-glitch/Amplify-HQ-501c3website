@@ -118,6 +118,10 @@ export const chapters: Chapter[] = [
     state: "TX",
     district: "Fort Bend ISD",
     status: "founding",
+    officers: [
+      { name: "Cody Pham", role: "Co-President" },
+      { name: "Akshita Gummadi", role: "Co-President" },
+    ],
   },
   {
     slug: "elkins",
