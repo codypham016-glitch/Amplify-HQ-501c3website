@@ -157,6 +157,38 @@ export const chapters: Chapter[] = [
       { name: "Matthew Forrester", role: "Co-President" },
     ],
   },
+  {
+    slug: "bellaire",
+    school: "Bellaire High School",
+    shortName: "Bellaire",
+    monogram: "B",
+    city: "Bellaire",
+    state: "TX",
+    district: "Houston ISD",
+    status: "founding",
+    officers: [{ name: "Alena Chaudhuri", role: "Co-President" }],
+  },
+  {
+    slug: "debakey",
+    school: "Michael E. DeBakey High School for Health Professions",
+    shortName: "DeBakey",
+    monogram: "DB",
+    city: "Houston",
+    state: "TX",
+    district: "Houston ISD",
+    status: "founding",
+  },
+  {
+    slug: "kempner",
+    school: "I.H. Kempner High School",
+    shortName: "Kempner",
+    monogram: "K",
+    city: "Sugar Land",
+    state: "TX",
+    district: "Fort Bend ISD",
+    status: "founding",
+    officers: [{ name: "Dhruva Ambati", role: "Co-President" }],
+  },
 ];
 
 /* ---------------------------------------------------------------- *

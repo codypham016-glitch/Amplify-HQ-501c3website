@@ -23,7 +23,7 @@ const board: BoardMember[] = [
   { name: "Aasim Dhukka", role: "Chief Operating Officer" },
   { name: "To be announced", role: "Chief Financial Officer" },
   { name: "Cody Pham", role: "Chief Technology Officer" },
-  { name: "To be announced", role: "Chief Marketing Officer" },
+  { name: "Dhruva Ambati", role: "Chief Marketing Officer" },
 ];
 
 export default function AboutPage() {

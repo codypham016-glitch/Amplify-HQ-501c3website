@@ -51,13 +51,7 @@ export function Hero() {
         </div>
 
         <FadeIn>
-          <dl className="grid grid-cols-2 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-4 lg:py-10">
-            <div>
-              <dt className="eyebrow">Founding</dt>
-              <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">
-                <AnimatedCounter value={6} suffix=" chapters" />
-              </dd>
-            </div>
+          <dl className="grid grid-cols-1 gap-6 border-t border-[color:var(--color-line)] py-8 sm:grid-cols-3 lg:py-10">
             <div>
               <dt className="eyebrow">Headquarters</dt>
               <dd className="mt-2 text-xl font-bold text-[color:var(--color-navy)]">Houston, TX</dd>

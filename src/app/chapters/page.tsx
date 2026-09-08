@@ -20,11 +20,11 @@ export default function ChaptersPage() {
             <div className="lg:col-span-8">
               <SectionLabel>Chapters</SectionLabel>
               <h1 className="mt-8 text-[length:var(--text-hero)] font-extrabold leading-[1.02] tracking-[-0.025em] text-[color:var(--color-navy)]">
-                Six schools, one network
+                One network of chapters
               </h1>
             </div>
             <p className="lg:col-span-8 max-w-2xl text-lg leading-[1.65] text-[color:var(--color-navy-2)]">
-              Amplify HQ runs across six high schools. Each chapter is run by its own students. Officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
+              Amplify HQ runs across high schools around Houston. Each chapter is run by its own students. Officers drawn from the campus, calendar set by the members, speakers chosen by the leads.
             </p>
           </div>
         </Container>
